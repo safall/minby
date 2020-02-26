@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/minby"
+        android:layout_width="238dp"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="382dp"
+        android:gravity="top"
+        android:lineSpacingExtra="0dp"
+        android:text="@string/minby"
+        android:textAppearance="@style/minby"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/vi_bygger_b"
+        android:layout_width="156dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignmentTop="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="438dp"
+        android:gravity="top"
+        android:lineSpacingExtra="0dp"
+        android:text="@string/vi_bygger_b"
+        android:textAppearance="@style/vi_bygger_b" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignmentTop="true"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="535dp"
+        android:visibility="visible" />
+
+</RelativeLayout>
