@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">MinBy</string>
     <string name="copied">copied</string>
-    <string name="minby">minby</string>
+    <string name="minby">Minby</string>
     <string name="vi_bygger_b">vi_bygger_b</string>
+    <string name="Registrerdeg">Registrer deg</string>
+    <string name="Password">Password</string>
+    <string name="Bekreftpassword">Bekreft password</string>
 </resources>
