@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="406dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-24dp"
+        android:background="@color/yellow">
+
+        <TextView
+            android:id="@+id/minby"
+            android:layout_width="84dp"
+            android:layout_height="31dp"
+            android:layout_alignmentStart="true"
+            android:layout_alignmentTop="true"
+            android:layout_marginStart="153dp"
+            android:layout_marginTop="49dp"
+            android:gravity="top"
+            android:lineSpacingExtra="0dp"
+            android:text="@string/minby"
+            android:textAppearance="@style/minby"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/god_dag"
+            android:layout_width="221dp"
+            android:layout_height="136dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="130dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="0dp"
+            android:text="@string/god_dag"
+            android:textSize="55sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="306dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="228dp"
+            android:text="@string/hva_nsker_d"
+            android:textColor="@color/black"
+            android:textSize="24sp"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="285dp"
+        android:layout_height="396dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="326dp"
+        android:background="@color/light_white"
+        >
+
+        <view
+            android:layout_width="285dp"
+            android:layout_height="130dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/light_white" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

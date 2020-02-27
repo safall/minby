@@ -8,4 +8,6 @@
     <string name="Bekreftpassword">Bekreft password</string>
     <string name="register_d">Registrer deg</string>
     <string name="eksisterend">Eksisterende bruke? logg inn</string>
+    <string name="god_dag">God dag!</string>
+    <string name="hva_nsker_d">Hva onsker du a gjore idag?</string>
 </resources>
