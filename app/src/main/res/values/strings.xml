@@ -6,4 +6,6 @@
     <string name="Registrerdeg">Registrer deg</string>
     <string name="Password">Password</string>
     <string name="Bekreftpassword">Bekreft password</string>
+    <string name="register_d">Registrer deg</string>
+    <string name="eksisterend">Eksisterende bruke? logg inn</string>
 </resources>
