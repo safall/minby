@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/yellow"
@@ -8,44 +8,34 @@
 
     <TextView
         android:id="@+id/minby"
-        android:layout_width="171dp"
-        android:layout_height="83dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="374dp"
-        android:gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="382dp"
+        android:gravity="center_horizontal"
         android:lineSpacingExtra="0dp"
         android:text="@string/minby"
         android:textAppearance="@style/minby"
         android:textColor="@color/black"
-        android:textSize="54sp"
-        android:textStyle="normal" />
+        android:textSize="64sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/vi_bygger_b"
-        android:layout_width="156dp"
-        android:layout_height="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignmentTop="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="438dp"
-        android:gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:lineSpacingExtra="0dp"
         android:text="@string/vi_bygger_b"
-        android:textSize="15sp"
+        android:textSize="12sp"
         android:textAppearance="@style/vi_bygger_b"
-        android:layout_centerHorizontal="true"/>
+        />
 
     <ProgressBar
         android:id="@+id/loading"
-        android:layout_width="43dp"
-        android:layout_height="43dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignmentTop="true"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="535dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="77dp"
         android:visibility="visible" />
 
-</RelativeLayout>
+</LinearLayout>
