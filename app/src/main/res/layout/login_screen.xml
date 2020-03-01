@@ -40,6 +40,14 @@
             android:textSize="13sp"
             android:layout_marginTop="10dp"
             android:text="@string/har_du_ikke" />
+        <TextView
+            android:id="@+id/registerLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:text="@string/register_d" />
     </LinearLayout>
 
     <LinearLayout
@@ -51,7 +59,7 @@
         android:background="@color/grey">
 
         <EditText
-            android:id="@+id/mail_id"
+            android:id="@+id/mailId"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="75dp"
@@ -82,7 +90,7 @@
             tools:targetApi="o" />
 
         <Button
-            android:id="@+id/login_id"
+            android:id="@+id/loginId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"

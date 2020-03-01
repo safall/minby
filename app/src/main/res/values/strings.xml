@@ -11,6 +11,6 @@
     <string name="god_dag">God dag!</string>
     <string name="hva_nsker_d">Hva onsker du a gjore idag?</string>
     <string name="logg_in">Logg inn</string>
-    <string name="har_du_ikke">Har du ikke en bruker? \n Registrer deg idag</string>
+    <string name="har_du_ikke">Har du ikke en bruker?</string>
     <string name="mailaddress">Mail Address</string>
 </resources>
