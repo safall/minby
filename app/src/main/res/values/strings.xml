@@ -13,5 +13,6 @@
     <string name="logg_in">Logg inn</string>
     <string name="har_du_ikke">Har du ikke en bruker?</string>
     <string name="mailaddress">Mail Address</string>
+    <string name="login_link">logg inn</string>
     <string name="loginLink">Logg inn</string>
 </resources>
