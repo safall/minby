@@ -7,10 +7,4 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-    <style name="minby">minby</style>
-
-    <style name="vi_bygger_b">vi_bygger_b</style>
-    <style name="eksisterend"> eksisterend</style>
-
 </resources>
