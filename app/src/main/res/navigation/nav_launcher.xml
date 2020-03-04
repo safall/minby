@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_launcher"
+    app:startDestination="@id/launcherFragment">
+
+
+    <fragment
+        android:id="@+id/launcherFragment"
+        android:name="com.afi.minby.auth.launcher.LauncherFragment"
+        tools:layout="@layout/launcher_fragment">
+
+        <action
+            android:id="@+id/launcherToLoginFragment"
+            app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/launcherToSignupFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.afi.minby.auth.login.LoginFragment"
+        tools:layout="@layout/login_fragment" />
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.afi.minby.auth.signup.SignUpFragment"
+        tools:layout="@layout/sign_up_fragment" />
+</navigation>
