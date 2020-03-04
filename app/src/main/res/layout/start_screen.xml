@@ -4,115 +4,54 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="406dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="-24dp"
-        android:background="@color/yellow">
+        android:background="@color/yellow"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/minby"
-            android:layout_width="84dp"
-            android:layout_height="31dp"
-            android:layout_alignmentStart="true"
-            android:layout_alignmentTop="true"
-            android:layout_marginStart="153dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="49dp"
-            android:gravity="top"
-            android:lineSpacingExtra="0dp"
+            android:gravity="center"
             android:text="@string/minby"
             android:textAppearance="@style/minby"
             android:textSize="25sp" />
 
         <TextView
             android:id="@+id/god_dag"
-            android:layout_width="221dp"
-            android:layout_height="136dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
-            android:gravity="center_horizontal"
-            android:lineSpacingExtra="0dp"
+            android:gravity="center"
             android:text="@string/god_dag"
             android:textSize="55sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="306dp"
-            android:layout_height="32dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="46dp"
-            android:layout_marginTop="228dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/hva_nsker_d"
             android:textColor="@color/black"
             android:textSize="24sp" />
+    </LinearLayout>
 
-
-    </RelativeLayout>
-    <RelativeLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="426dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="362dp"
-        android:background="@color/light_white">
-
-        <Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="-29dp"
-            android:background="@color/yellow"></Toolbar>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="285dp"
-        android:layout_height="396dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="326dp"
-        android:background="@color/light_white">
-
-        <LinearLayout
-            android:layout_width="285dp"
-            android:layout_height="130dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="151dp"
-            android:background="@color/white">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="285dp"
-            android:layout_height="130dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="302dp"
-            android:background="@color/white">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="285dp"
-            android:layout_height="130dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="-2dp"
-            android:background="@color/white">
-
-        </LinearLayout>
-    </RelativeLayout>
-
+        android:layout_marginEnd="44dp"
+        android:background="@color/light_white" />
 </RelativeLayout>
 
 
