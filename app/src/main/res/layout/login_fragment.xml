@@ -89,14 +89,13 @@
             tools:targetApi="o" />
 
         <Button
-            android:id="@+id/loginId"
+            android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:alpha="0.5"
             android:background="@drawable/login_button_background"
             android:textColor="@color/white"
-            android:onClick="Login"
             android:text="@string/logg_in" />
     </LinearLayout>
 
