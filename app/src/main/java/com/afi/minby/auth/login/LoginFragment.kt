@@ -34,5 +34,9 @@ class LoginFragment : Fragment() {
         loginButton.setOnClickListener {
             NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
         }
+
+        registerButton.setOnClickListener {
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginTosignUpFragment)
+        }
     }
 }

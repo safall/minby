@@ -31,6 +31,10 @@
         <action
             android:id="@+id/loginToHomeActivity"
             app:destination="@id/homeActivity" />
+
+        <action
+            android:id="@+id/loginTosignUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
 
     <fragment
