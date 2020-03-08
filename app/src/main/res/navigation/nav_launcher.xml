@@ -15,7 +15,7 @@
             android:id="@+id/launcherToLoginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/nav_launcher"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/launcherToSignupFragment"
@@ -26,10 +26,24 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.afi.minby.auth.login.LoginFragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment">
+
+        <action
+            android:id="@+id/loginToHomeActivity"
+            app:destination="@id/homeActivity" />
+
+        <action
+            android:id="@+id/loginTosignUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.afi.minby.auth.signup.SignUpFragment"
         tools:layout="@layout/sign_up_fragment" />
+
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.afi.minby.home.HomeActivity"
+        tools:layout="@layout/activity_home" />
 </navigation>

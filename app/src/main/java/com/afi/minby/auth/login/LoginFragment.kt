@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
 
 import com.afi.minby.R
+import kotlinx.android.synthetic.main.activity_launcher.*
+import kotlinx.android.synthetic.main.login_fragment.*
 
 class LoginFragment : Fragment() {
 
@@ -27,7 +30,13 @@ class LoginFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+        loginButton.setOnClickListener {
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+        }
+
+        registerButton.setOnClickListener {
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginTosignUpFragment)
+        }
+    }
 }

@@ -15,4 +15,6 @@
     <string name="mailaddress">Mail Address</string>
     <string name="login_link">logg inn</string>
     <string name="loginLink">Logg inn</string>
+    <string name="home">home</string>
+    <string name="settings">settings</string>
 </resources>
