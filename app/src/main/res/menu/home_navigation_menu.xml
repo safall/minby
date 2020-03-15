@@ -7,7 +7,7 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/categoriesFragment"
         android:icon="@drawable/ic_audiotrack_light"
-        android:title="@string/settings" />
+        android:title="@string/categories" />
 </menu>
