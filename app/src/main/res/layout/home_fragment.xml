@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/grey"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="406dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="-24dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:elevation="4dp"
         android:background="@color/yellow"
         android:orientation="vertical">
 
@@ -17,7 +19,6 @@
             android:id="@+id/minby"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="49dp"
             android:gravity="center"
             android:text="@string/minby"
             android:textSize="25sp" />
@@ -26,7 +27,7 @@
             android:id="@+id/god_dag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="80dp"
             android:gravity="center"
             android:text="@string/god_dag"
             android:textSize="55sp"
@@ -44,14 +45,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_height="0dp"
+        android:layout_weight="1.3"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="326dp"
         android:layout_marginEnd="44dp"
+        tools:listitem="@layout/home_menu_item"
         android:background="@color/light_white" />
-</RelativeLayout>
+</LinearLayout>
 
 
 

@@ -20,7 +20,8 @@ class LauncherFragment : Fragment() {
     private lateinit var viewModel: LauncherViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.launcher_fragment, container, false)

@@ -1,12 +1,11 @@
 package com.afi.minby.auth.signup
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.afi.minby.R
 
 class SignUpFragment : Fragment() {
@@ -18,7 +17,8 @@ class SignUpFragment : Fragment() {
     private lateinit var viewModel: SignUpViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.sign_up_fragment, container, false)
@@ -29,5 +29,4 @@ class SignUpFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(SignUpViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
