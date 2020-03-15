@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="recyclerview_spacing">25dp</dimen>
+    <dimen name="category_item_bottom_spacing">19dp</dimen>
+    <dimen name="another_category_itembottom_spacing">51dp</dimen>
 </resources>

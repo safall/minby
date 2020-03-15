@@ -17,4 +17,7 @@
     <string name="loginLink">Logg inn</string>
     <string name="home">home</string>
     <string name="settings">settings</string>
+    <string name="another">annet</string>
+    <string name="submit">Submit</string>
+    <string name="categories">Categories</string>
 </resources>
