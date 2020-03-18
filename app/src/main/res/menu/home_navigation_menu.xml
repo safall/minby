@@ -10,4 +10,8 @@
         android:id="@+id/categoriesFragment"
         android:icon="@drawable/ic_audiotrack_light"
         android:title="@string/categories" />
+    <item
+        android:id="@+id/issueFragment"
+        android:icon="@drawable/ic_audiotrack_light"
+        android:title="@string/message" />
 </menu>
