@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="36dp"
+        android:gravity="center_horizontal"
+        android:text="Velg et bilde"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/cameraImage"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="250dp"
+        android:src="@drawable/camera_image" />
+
+    <ImageView
+        android:id="@+id/bibliotekImage"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="62dp"
+        android:src="@drawable/library_books_black_24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="237dp"
+        android:gravity="center_horizontal"
+        android:text="Ta bilde"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="43dp"
+        android:gravity="center_horizontal"
+        android:text="Bibliotek"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="397dp"
+        android:layout_marginEnd="36dp"
+        android:gravity="center_horizontal"
+        android:text="Gi en beskrivelse"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/messageText"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="445dp"
+        android:layout_marginEnd="36dp"
+        android:hint="Legg gjerne inn en beskrivelse av ideen Maks 300 legn"
+        android:maxLength="300"
+        android:textAlignment="viewStart"
+        android:textColorHint="@color/hintText"/>
+
+    <ImageView
+        android:id="@+id/voiceRecord"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="297dp"
+        android:layout_marginTop="580dp"
+        android:layout_marginEnd="36dp"
+        android:src="@drawable/voice_black_24dp" />
+    <Button
+        android:id="@+id/fullFor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="684dp"
+        android:alpha="0.5"
+        android:background="@drawable/login_button_background"
+        android:textColor="@color/white"
+        android:text="Fullfor" />
+
+</RelativeLayout>
