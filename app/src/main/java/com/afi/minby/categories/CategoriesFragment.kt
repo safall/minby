@@ -27,10 +27,14 @@ class CategoriesFragment : Fragment() {
     private lateinit var categoriesAdapter: CategoriesAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.categories_fragment, container, false)
+        return inflater.inflate(
+            R.layout.categories_fragment,
+            container, false
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -130,9 +134,7 @@ class CategoriesFragment : Fragment() {
                     null
                 )
             )
-
         }
-
         categoriesAdapter.items = items
         categoriesAdapter.notifyDataSetChanged()
     }
