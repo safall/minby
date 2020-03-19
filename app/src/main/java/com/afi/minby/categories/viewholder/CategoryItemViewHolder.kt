@@ -17,5 +17,4 @@ class CategoryItemViewHolder(val view: View, val artworkSize: Int) : RecyclerVie
         layoutParams.width = width
         view.layoutParams = layoutParams
     }
-
 }
