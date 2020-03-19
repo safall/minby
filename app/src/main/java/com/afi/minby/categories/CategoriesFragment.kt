@@ -1,6 +1,5 @@
 package com.afi.minby.categories
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,8 +13,8 @@ import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_
 import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_SUBMIT_BUTTON
 import com.afi.minby.categories.model.Category
+import com.afi.minby.core.ArtworkUtils
 import com.afi.minby.core.CategoriesItemDecoration
-import com.afi.minby.home.HomeMenuItem
 import kotlinx.android.synthetic.main.categories_fragment.*
 
 class CategoriesFragment : Fragment() {
@@ -25,17 +24,29 @@ class CategoriesFragment : Fragment() {
     }
 
     private lateinit var viewModel: CategoriesViewModel
-    private val categoriesAdapter = CategoriesAdapter()
+    private lateinit var categoriesAdapter: CategoriesAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.categories_fragment, container, false)
+        return inflater.inflate(
+            R.layout.categories_fragment,
+            container, false
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val artworkSize: Int = ArtworkUtils.getSize(
+            R.dimen.size_screen_width,
+            R.dimen.size_103dp,
+            view.context
+        ) / 3
+
+        categoriesAdapter = CategoriesAdapter(artworkSize)
         with(recyclerView) {
             adapter = categoriesAdapter
             layoutManager = getGridLayoutManager()
@@ -123,9 +134,7 @@ class CategoriesFragment : Fragment() {
                     null
                 )
             )
-
         }
-
         categoriesAdapter.items = items
         categoriesAdapter.notifyDataSetChanged()
     }
