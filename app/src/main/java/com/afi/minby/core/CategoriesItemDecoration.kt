@@ -21,13 +21,11 @@ class CategoriesItemDecoration : RecyclerView.ItemDecoration() {
         val itemPos = parent.getChildAdapterPosition(view)
         if (itemPos > -1) {
             val viewType = parent.adapter?.getItemViewType(itemPos)
-            outRect.bottom = getSpacingSize(viewType, parent)
-            outRect.right = parent.context.resources.getDimension(R.dimen.category_item_bottom_spacing).toInt()
-            outRect.left = parent.context.resources.getDimension(R.dimen.category_item_bottom_spacing).toInt()
+            outRect.bottom = getBottomSpacing(viewType, parent)
         }
     }
 
-    private fun getSpacingSize(viewType: Int?, parent: RecyclerView): Int {
+    private fun getBottomSpacing(viewType: Int?, parent: RecyclerView): Int {
         return when (viewType) {
             VIEW_HOLDER_CATEGORY -> parent.context.resources.getDimension(R.dimen.category_item_bottom_spacing).toInt()
             VIEW_HOLDER_ANOTHER_CATEGORY -> parent.context.resources.getDimension(R.dimen.another_category_itembottom_spacing).toInt()

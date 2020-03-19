@@ -1,5 +1,6 @@
 package com.afi.minby.categories
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
@@ -9,7 +10,7 @@ import com.afi.minby.categories.viewholder.CategoryItemViewHolder
 import com.afi.minby.categories.viewholder.SubmitButtonViewHolder
 import com.afi.minby.core.inflate
 
-class CategoriesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CategoriesAdapter(val artworkSize: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var items = listOf<Category>()
 
@@ -23,7 +24,12 @@ class CategoriesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return when (viewType) {
             VIEW_HOLDER_SUBMIT_BUTTON -> SubmitButtonViewHolder(parent.context.inflate(R.layout.submit_button_item))
             VIEW_HOLDER_ANOTHER_CATEGORY -> AnotherCategoryViewHolder(parent.context.inflate(R.layout.another_category_item))
-            VIEW_HOLDER_CATEGORY -> CategoryItemViewHolder(parent.context.inflate(R.layout.category_item))
+            VIEW_HOLDER_CATEGORY -> {
+                val view = LayoutInflater
+                    .from(parent.context)
+                    .inflate(R.layout.category_item, parent, false)
+                CategoryItemViewHolder(view, artworkSize)
+            }
             else -> throw IllegalArgumentException("No such view type found")
         }
     }

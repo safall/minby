@@ -29,5 +29,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:layout_marginTop="30dp" />
 </LinearLayout>
