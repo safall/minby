@@ -1,6 +1,5 @@
 package com.afi.minby.categories
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,6 @@ import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_SUBMIT_BUTTON
 import com.afi.minby.categories.model.Category
 import com.afi.minby.core.CategoriesItemDecoration
-import com.afi.minby.home.HomeMenuItem
 import kotlinx.android.synthetic.main.categories_fragment.*
 
 class CategoriesFragment : Fragment() {
@@ -28,7 +26,8 @@ class CategoriesFragment : Fragment() {
     private val categoriesAdapter = CategoriesAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.categories_fragment, container, false)
@@ -123,7 +122,6 @@ class CategoriesFragment : Fragment() {
                     null
                 )
             )
-
         }
 
         categoriesAdapter.items = items
