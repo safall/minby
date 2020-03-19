@@ -31,7 +31,10 @@ class CategoriesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.categories_fragment, container, false)
+        return inflater.inflate(
+            R.layout.categories_fragment,
+            container, false
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -132,7 +135,6 @@ class CategoriesFragment : Fragment() {
                 )
             )
         }
-
         categoriesAdapter.items = items
         categoriesAdapter.notifyDataSetChanged()
     }
