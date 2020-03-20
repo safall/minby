@@ -1,107 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
-    android:orientation="vertical">
+    android:background="@color/grey">
 
-    <LinearLayout
+    <View
+        android:id="@+id/topView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:elevation="4dp"
         android:background="@color/yellow"
-        android:orientation="vertical">
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="49dp"
-            android:gravity="center"
-            android:lineSpacingExtra="0dp"
-            android:text="@string/minby"
-            android:textSize="25sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="123dp"
-            android:gravity="center"
-            android:text="@string/register_d"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/eksisterend" />
-
-        <TextView
-            android:id="@+id/logInLink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/login_link" />
-
-        <TextView
-            android:id="@+id/loginIdLink"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/loginLink" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/minbyText"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        android:paddingStart="58dp"
-        android:paddingEnd="58dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0dp"
+        android:text="@string/minby"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="75dp"
-            android:autofillHints="@string/Password"
-            android:background="@drawable/edittext_background"
-            android:hint="@string/Password"
-            android:inputType="textWebPassword"
-            android:paddingStart="8dp"
-            android:paddingEnd="0dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/light_darg"
-            tools:targetApi="o"
-            tools:text="Password" />
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:gravity="center"
+        android:text="@string/register_d"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minbyText" />
 
-        <EditText
-            android:id="@+id/rePasswordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
-            android:autofillHints="@string/Bekreftpassword"
-            android:background="@drawable/edittext_background"
-            android:hint="@string/Bekreftpassword"
-            android:inputType="textWebPassword"
-            android:paddingStart="8dp"
-            android:paddingEnd="0dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/light_darg"
-            tools:targetApi="o"
-            tools:text="Bekreft passord" />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/eksisterend"
+        android:textColor="@color/hintText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerText" />
 
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="36dp"
-            android:alpha="0.5"
-            android:background="@drawable/login_button_background"
-            android:text="@string/Registrerdeg" />
-    </LinearLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/logInLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/login_link"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginEnd="58dp"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/Password"
+        android:paddingStart="16dp"
+        android:textColor="@color/hintText"
+        android:textColorHint="@color/light_darg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logInLink"
+        tools:text="Password" />
+
+    <EditText
+        android:id="@+id/rePasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="58dp"
+        android:autofillHints="@string/Bekreftpassword"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/Bekreftpassword"
+        android:paddingStart="16dp"
+        android:textColor="@color/hintText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+        tools:text="Bekreft passord" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="58dp"
+        android:background="@drawable/login_button_background"
+        android:text="@string/Registrerdeg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rePasswordEditText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
