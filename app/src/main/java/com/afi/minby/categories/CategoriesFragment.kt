@@ -12,6 +12,7 @@ import com.afi.minby.R
 import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
 import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_SUBMIT_BUTTON
+import com.afi.minby.categories.model.CategoriesEnum
 import com.afi.minby.categories.model.Category
 import com.afi.minby.core.ArtworkUtils
 import com.afi.minby.core.CategoriesItemDecoration
@@ -81,43 +82,47 @@ class CategoriesFragment : Fragment() {
             add(
                 0,
                 Category(
-                    "Send oss en ide",
-                    123
+                    "Social",
+                    CategoriesEnum.SOCIAL
                 )
             )
             add(
                 1,
                 Category(
-                    "Send oss en vurdering",
-                    123
+                    "Building and construction",
+                    CategoriesEnum.BUILDING
                 )
             )
             add(
                 2,
                 Category(
-                    "Send oss en intervju",
-                    123
+                    "Nature and green",
+                    CategoriesEnum.NATURE
+
                 )
             )
             add(
                 3,
                 Category(
-                    "Send oss en ide",
-                    123
+                    "Activities and training",
+                    CategoriesEnum.ACTIVITIES
+
                 )
             )
             add(
                 4,
                 Category(
-                    "Send oss en vurdering",
-                    123
+                    "Technology",
+                    CategoriesEnum.TECHNOLOGY
+
                 )
             )
             add(
                 5,
                 Category(
-                    "Send oss en intervju",
-                    123
+                    "Ogranization",
+                    CategoriesEnum.ORGANISATION
+
                 )
             )
             add(
