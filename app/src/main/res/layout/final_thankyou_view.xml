@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
-
     <View
         android:id="@+id/topView"
         android:layout_width="405dp"
@@ -18,7 +17,6 @@
         app:layout_constraintHeight_percent=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/minbyText"
         android:layout_width="match_parent"
@@ -31,7 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/thankYou"
         android:layout_width="match_parent"
@@ -45,7 +42,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minbyText" />
-
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
@@ -57,7 +53,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thankYou" />
-
     <TextView
         android:id="@+id/scoreText"
         android:layout_width="match_parent"
@@ -73,7 +68,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text" />
-
     <ImageView
         android:id="@+id/awardImage"
         android:layout_width="144dp"
@@ -87,7 +81,6 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreText" />
-
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
@@ -101,5 +94,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/awardImage" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

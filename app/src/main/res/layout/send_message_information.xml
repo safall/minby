@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
-
     <ImageView
         android:id="@+id/markerIcon"
         android:layout_width="44dp"
@@ -14,7 +13,6 @@
         android:src="@drawable/ic_location_on_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
@@ -26,7 +24,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/markerIcon"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/categoryImage"
         android:layout_width="44dp"
@@ -36,7 +33,6 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/markerIcon" />
-
     <TextView
         android:id="@+id/categoryTextView"
         android:layout_width="wrap_content"
@@ -48,7 +44,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/categoryImage"
         app:layout_constraintTop_toBottomOf="@+id/locationTextView" />
-
     <ImageView
         android:id="@+id/cameraImage"
         android:layout_width="40dp"
@@ -58,8 +53,6 @@
         android:src="@drawable/camera_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoryImage" />
-
-
     <ImageView
         android:id="@+id/uploadedImageView"
         android:layout_width="44dp"
@@ -69,7 +62,6 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toEndOf="@+id/cameraImage"
         app:layout_constraintTop_toBottomOf="@+id/categoryTextView" />
-
     <ImageView
         android:id="@+id/voiceIcon"
         android:layout_width="44dp"
@@ -79,8 +71,6 @@
         android:src="@drawable/voice_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cameraImage" />
-
-
     <TextView
         android:id="@+id/recordedVoice"
         android:layout_width="wrap_content"
@@ -92,8 +82,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/voiceIcon"
         app:layout_constraintTop_toBottomOf="@+id/uploadedImageView" />
-
-
     <ImageView
         android:id="@+id/userIcon"
         android:layout_width="44dp"
@@ -103,7 +91,6 @@
         android:src="@drawable/ic_person_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/voiceIcon" />
-
     <TextView
         android:id="@+id/userEmail"
         android:layout_width="wrap_content"
@@ -115,7 +102,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/voiceIcon"
         app:layout_constraintTop_toBottomOf="@+id/recordedVoice" />
-
     <View
         android:id="@+id/dividerView"
         android:layout_width="match_parent"
@@ -127,7 +113,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userIcon" />
-
     <TextView
         android:id="@+id/ratingText"
         android:layout_width="wrap_content"
@@ -140,7 +125,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dividerView" />
-
     <androidx.appcompat.widget.AppCompatRatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,7 +133,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ratingText" />
-
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"

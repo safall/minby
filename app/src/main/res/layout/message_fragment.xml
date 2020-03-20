@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
-
     <TextView
         android:id="@+id/titleText"
         android:layout_width="match_parent"
@@ -60,7 +59,6 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/galleryImage" />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -71,7 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/galleryText" />
-
     <ImageView
         android:id="@+id/uploadedImageView"
         android:layout_width="60dp"
@@ -81,7 +78,6 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/galleryText" />
-
     <TextView
         android:id="@+id/sendMessageText"
         android:layout_width="wrap_content"
@@ -94,7 +90,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadedImageView" />
-
     <EditText
         android:id="@+id/messageEditText"
         android:layout_width="match_parent"
@@ -111,7 +106,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sendMessageText" />
-
     <Button
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
