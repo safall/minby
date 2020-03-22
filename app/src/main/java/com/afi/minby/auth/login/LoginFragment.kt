@@ -12,9 +12,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.login_fragment.*
-import javax.inject.Inject
 
 class LoginFragment : Fragment(R.layout.login_fragment) {
 
