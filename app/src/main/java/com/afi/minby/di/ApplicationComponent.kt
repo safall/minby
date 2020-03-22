@@ -1,18 +1,13 @@
 package com.afi.minby.di
 
-import android.content.Context
-import dagger.BindsInstance
+import com.afi.minby.auth.FacebookModule
+import com.afi.minby.auth.login.LoginFragment
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component
+@Component(modules = [ApplicationModule::class, FacebookModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
-    @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun applicationContext(applicationContext: Context): Builder
-        fun build(): ApplicationComponent
-    }
+    fun inject(loginFragment: LoginFragment)
 }

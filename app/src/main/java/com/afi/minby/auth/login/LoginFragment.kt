@@ -2,59 +2,34 @@ package com.afi.minby.auth.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
-import com.facebook.CallbackManager
-import com.facebook.FacebookCallback
-import com.facebook.FacebookException
-import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.login_fragment.*
+import javax.inject.Inject
 
 class LoginFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var viewModel: LoginViewModel
-    private val callbackManager = CallbackManager.Factory.create()
-    private lateinit var googleSignInClient: GoogleSignInClient
+
+    private lateinit var client: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        LoginManager.getInstance()
-            .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-                override fun onSuccess(result: LoginResult?) {
-                    val accessToken = result?.accessToken
-                    TODO("send accessToken to backend")
-                }
-
-                override fun onCancel() {
-                    Log.d("cancelled", "cancelled")
-                }
-
-                override fun onError(error: FacebookException?) {
-                    Log.d("Error", error?.message.toString())
-                }
-            })
-
-        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail().build()
-        googleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
+        MinByApplication.instance.component.inject(this)
     }
 
     override fun onCreateView(
@@ -68,51 +43,57 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         facebookButton.setOnClickListener {
-            LoginManager.getInstance()
-                .logInWithReadPermissions(this, listOf("email", "public_profile"))
+            viewModel.initFBLogin()
         }
 
         googleButton.setOnClickListener {
-            val signInIntent: Intent = googleSignInClient.signInIntent
-            startActivityForResult(signInIntent, 200)
+            viewModel.initGoogleLogin()
+        }
+
+        loginButton.setOnClickListener {
+            viewModel.attemptLogin(mailId.text.toString(), passwordEditText.text.toString())
+        }
+
+        registerButton.setOnClickListener {
+            NavHostFragment.findNavController(host_fragment)
+                .navigate(R.id.loginTosignUpFragment)
         }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+        viewModel =
+            ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel::class.java)
 
-        loginButton.setOnClickListener {
-            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
-        }
+        viewModel.fbuseCaseLiveData.observe(this, Observer {
+            it.authenticate(this)
+        })
 
-        registerButton.setOnClickListener {
-            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginTosignUpFragment)
-        }
+        viewModel.googleUseCaseLiveData.observe(this, Observer {
+            client = it.getGoogleSignInClient(requireActivity())
+            client.silentSignIn().addOnCompleteListener {
+                viewModel.checkForLogin(it, true)
+            }
+        })
+
+        viewModel.authenticationSuccessful.observe(this, Observer {
+            if (it) {
+                NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+            } else {
+                Toast.makeText(requireContext(), "Problem signing in to google", Toast.LENGTH_LONG)
+                    .show()
+            }
+        })
+
+        viewModel.silentAuthenticationFailed.observe(this, Observer {
+            if (it == true) {
+                startActivityForResult(client.signInIntent, 200)
+            }
+        })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 200) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleGoogleSignIn(task)
-        }
-    }
-
-    private fun handleGoogleSignIn(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            val account = completedTask.getResult(ApiException::class.java)
-            val accessToken = account?.idToken.toString()
-            TODO("send accessToken to backend")
-        } catch (e: ApiException) {
-            Log.w("google signin error", "signInResult:failed code=" + e.statusCode)
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        LoginManager.getInstance().unregisterCallback(callbackManager)
+        viewModel.onActivityResult(requestCode, resultCode, data)
     }
 }
