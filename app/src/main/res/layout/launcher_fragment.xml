@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/vi_bygger_b"
+        android:text="@string/we_build_city_together"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:textStyle="normal"

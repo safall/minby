@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
+
     <View
         android:id="@+id/topView"
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         app:layout_constraintHeight_default="percent"
         app:layout_constraintHeight_percent=".5"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/minby"
         android:layout_width="match_parent"
@@ -26,26 +28,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/registerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="123dp"
         android:gravity="center"
-        android:text="@string/register_d"
+        android:text="@string/register"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minby" />
+
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/eksisterend"
-        android:textColor="@color/lightgrey"
+        android:text="@string/existing_use"
+        android:textColor="@color/lightGrey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,11 +68,11 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/continue_with_facebook"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <TextView
         android:id="@+id/googleButton"
@@ -77,23 +81,23 @@
         android:layout_marginLeft="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="48dp"
-        android:background="@color/light_white"
+        android:background="@color/lightWhite"
         android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/continue_with_google"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/facebookButton"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        app:layout_constraintTop_toBottomOf="@+id/facebookButton" />
 
     <TextView
         android:id="@+id/logInLink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/login_link"
+        android:text="@string/logg_in"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,12 +115,12 @@
         android:hint="@string/Password"
         android:paddingStart="16dp"
         android:paddingEnd="0dp"
-        android:textColor="@color/lightgrey"
-        android:textColorHint="@color/light_darg"
+        android:textColor="@color/lightGrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logInLink"
         tools:text="Password" />
+
     <EditText
         android:id="@+id/rePasswordEditText"
         android:layout_width="match_parent"
@@ -124,16 +128,16 @@
         android:layout_marginStart="58dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="58dp"
-        android:autofillHints="@string/Bekreftpassword"
         android:background="@drawable/edittext_background"
-        android:hint="@string/Bekreftpassword"
+        android:hint="@string/confirm_password"
         android:paddingStart="16dp"
         android:paddingEnd="0dp"
-        android:textColor="@color/lightgrey"
+        android:textColor="@color/lightGrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
         tools:text="Bekreft passord" />
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
@@ -142,7 +146,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="58dp"
         android:background="@drawable/login_button_background"
-        android:text="@string/Registrerdeg"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rePasswordEditText" />

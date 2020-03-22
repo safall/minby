@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:gravity="center"
-            android:text="@string/god_dag"
+            android:text="@string/good_day"
             android:textSize="55sp"
             android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/hva_nsker_d"
+            android:text="@string/what_do_you_want_to_do"
             android:textColor="@color/black"
             android:textSize="24sp" />
     </LinearLayout>
@@ -51,7 +51,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginEnd="44dp"
         tools:listitem="@layout/home_menu_item"
-        android:background="@color/light_white" />
+        android:background="@color/lightWhite" />
 </LinearLayout>
 
 
