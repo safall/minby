@@ -14,16 +14,17 @@ object ArtworkUtils {
 
     fun getSize(dimen: Int, marginDimen: Int, requestedOrientation: Int, context: Context): Int {
         val pixelSize: Int = context.getDimensionPixelSize(dimen)
-        val marginPixelSize = if (marginDimen != 0) context.getDimensionPixelSize(marginDimen) else 0
+        val marginPixelSize =
+            if (marginDimen != 0) context.getDimensionPixelSize(marginDimen) else 0
         if (pixelSize > 0) {
             return pixelSize - marginPixelSize
         }
         var widthPixels: Int = context.screenWidthPixels
-        var heightPixels: Int =  context.screenHeightPixels
+        var heightPixels: Int = context.screenHeightPixels
         if (requestedOrientation != context.screenOrientation) {
             val navigationBarHeight: Int = getNavigationBarHeight(context)
             widthPixels =
-               context.screenHeightPixels + navigationBarHeight
+                context.screenHeightPixels + navigationBarHeight
             heightPixels =
                 context.screenWidthPixels - navigationBarHeight
         }
