@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,9 +13,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.di.MinByApplication
-import javax.inject.Inject
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.login_fragment.*
+import javax.inject.Inject
 
 class LoginFragment : Fragment() {
 
@@ -22,6 +24,8 @@ class LoginFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var viewModel: LoginViewModel
+
+    private lateinit var client: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,13 +70,25 @@ class LoginFragment : Fragment() {
         })
 
         viewModel.googleUseCaseLiveData.observe(this, Observer {
-            val client = it.getGoogleSignInClient(requireActivity())
-            val signInIntent: Intent = client.signInIntent
-            startActivityForResult(signInIntent, 200)
+            client = it.getGoogleSignInClient(requireActivity())
+            client.silentSignIn().addOnCompleteListener {
+                viewModel.checkForLogin(it, true)
+            }
         })
 
         viewModel.authenticationSuccessful.observe(this, Observer {
-            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+            if (it) {
+                NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+            } else {
+                Toast.makeText(requireContext(), "Problem signing in to google", Toast.LENGTH_LONG)
+                    .show()
+            }
+        })
+
+        viewModel.silentAuthenticationFailed.observe(this, Observer {
+            if (it == true) {
+                startActivityForResult(client.signInIntent, 200)
+            }
         })
     }
 
