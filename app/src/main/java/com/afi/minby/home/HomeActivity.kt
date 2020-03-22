@@ -8,11 +8,10 @@ import com.afi.minby.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_launcher.*
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(R.layout.activity_home) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
     }

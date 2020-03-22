@@ -10,22 +10,10 @@ import com.afi.minby.R
 import com.afi.minby.core.VerticalSpaceDecoration
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class HomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
+class HomeFragment : Fragment(R.layout.home_fragment) {
 
     private lateinit var viewModel: HomeViewModel
     private val homeMenuAdapter = HomeMenuAdapter()
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

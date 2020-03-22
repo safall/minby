@@ -18,25 +18,10 @@ import com.afi.minby.core.ArtworkUtils
 import com.afi.minby.core.CategoriesItemDecoration
 import kotlinx.android.synthetic.main.categories_fragment.*
 
-class CategoriesFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = CategoriesFragment()
-    }
+class CategoriesFragment : Fragment(R.layout.categories_fragment) {
 
     private lateinit var viewModel: CategoriesViewModel
     private lateinit var categoriesAdapter: CategoriesAdapter
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(
-            R.layout.categories_fragment,
-            container, false
-        )
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

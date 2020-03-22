@@ -2,9 +2,7 @@ package com.afi.minby.auth.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -18,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import javax.inject.Inject
 
-class LoginFragment : Fragment() {
+class LoginFragment : Fragment(R.layout.login_fragment) {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -30,14 +28,6 @@ class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MinByApplication.instance.component.inject(this)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -22,11 +22,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.login_fragment.*
 
-class SignUpFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = SignUpFragment()
-    }
+class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
 
     private lateinit var viewModel: SignUpViewModel
     private val callbackManager = CallbackManager.Factory.create()
@@ -52,14 +48,6 @@ class SignUpFragment : Fragment() {
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail().build()
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.sign_up_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
