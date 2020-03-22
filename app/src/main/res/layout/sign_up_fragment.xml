@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
@@ -51,6 +50,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerText" />
+
+    <TextView
+        android:id="@+id/facebookButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="48dp"
+        android:background="@drawable/button_bg_facebook"
+        android:drawableStart="@drawable/com_facebook_button_icon"
+        android:drawablePadding="12dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/continue_with_facebook"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/googleButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="48dp"
+        android:background="@color/light_white"
+        android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/continue_with_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facebookButton"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/logInLink"
         android:layout_width="match_parent"
@@ -61,7 +98,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+        app:layout_constraintTop_toBottomOf="@+id/googleButton" />
+
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"

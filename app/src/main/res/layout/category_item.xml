@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="103dp"
+    android:layout_width="110dp"
     android:orientation="vertical"
-    android:paddingStart="8dp"
     android:background="@drawable/another_category_background"
-    android:layout_height="103dp">
-
-    <TextView
-        android:id="@+id/categoryName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:textColor="@color/black"
-        android:text="Social"
-        android:textSize="14sp" />
+    android:elevation="10dp"
+    android:layout_height="110dp">
 
     <ImageView
         android:id="@+id/categoryImage"
-        android:layout_width="41dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="22dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/categoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Social"
+        android:gravity="center"
+        android:textSize="14sp" />
 </LinearLayout>

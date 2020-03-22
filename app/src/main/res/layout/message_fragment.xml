@@ -102,7 +102,7 @@
         android:gravity="top"
         android:hint="Legg gjerne inn en beskrivelse av ideen. Maks 300 tegn"
         android:padding="10dp"
-        android:textColorHint="@color/hintText"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sendMessageText" />
