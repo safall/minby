@@ -21,4 +21,7 @@
     <string name="submit">Submit</string>
     <string name="categories">Categories</string>
     <string name="message">message</string>
+    <string name="facebook_app_id">570257243697104</string>
+    <string name="fb_login_protocol_scheme">fb570257243697104</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
 </resources>
