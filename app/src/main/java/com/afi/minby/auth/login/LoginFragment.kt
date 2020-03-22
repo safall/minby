@@ -7,20 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
-import com.facebook.CallbackManager
-import com.facebook.FacebookCallback
-import com.facebook.FacebookException
-import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
+import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.login_fragment.*
 
@@ -30,28 +29,15 @@ class LoginFragment : Fragment() {
         fun newInstance() = LoginFragment()
     }
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     private lateinit var viewModel: LoginViewModel
-    private val callbackManager = CallbackManager.Factory.create()
     private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        LoginManager.getInstance()
-            .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-                override fun onSuccess(result: LoginResult?) {
-                    val accessToken = result?.accessToken
-                    TODO("send accessToken to backend")
-                }
-
-                override fun onCancel() {
-                    Log.d("cancelled", "cancelled")
-                }
-
-                override fun onError(error: FacebookException?) {
-                    Log.d("Error", error?.message.toString())
-                }
-            })
-
+        MinByApplication.instance.component.inject(this)
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail().build()
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), googleSignInOptions)
@@ -68,19 +54,13 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         facebookButton.setOnClickListener {
-            LoginManager.getInstance()
-                .logInWithReadPermissions(this, listOf("email", "public_profile"))
+            viewModel.initFBLogin()
         }
 
         googleButton.setOnClickListener {
             val signInIntent: Intent = googleSignInClient.signInIntent
             startActivityForResult(signInIntent, 200)
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
         loginButton.setOnClickListener {
             NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
@@ -91,9 +71,19 @@ class LoginFragment : Fragment() {
         }
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel::class.java)
+        viewModel.useCaseLiveData.observe(this, Observer {
+            if (activity != null) {
+                it.authenticate(this)
+            }
+        })
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
+        viewModel.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 200) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
@@ -105,14 +95,8 @@ class LoginFragment : Fragment() {
         try {
             val account = completedTask.getResult(ApiException::class.java)
             val accessToken = account?.idToken.toString()
-            TODO("send accessToken to backend")
         } catch (e: ApiException) {
             Log.w("google signin error", "signInResult:failed code=" + e.statusCode)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        LoginManager.getInstance().unregisterCallback(callbackManager)
     }
 }
