@@ -12,7 +12,7 @@
         android:layout_marginTop="59dp"
         android:layout_marginEnd="36dp"
         android:gravity="center"
-        android:text="Velg et bilde"
+        android:text="@string/select_an_image"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:text="Ta bilde"
+        android:text="@string/take_a_picture"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cameraImage" />
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
-        android:text="Bibliotek"
+        android:text="@string/library"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/galleryImage" />
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Gi en beskrivelse"
+        android:text="@string/give_a_description"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -100,9 +100,8 @@
         android:background="@color/white"
         android:elevation="4dp"
         android:gravity="top"
-        android:hint="Legg gjerne inn en beskrivelse av ideen. Maks 300 tegn"
+        android:hint="Feel free to enter a description of the idea. Maximum 300 characters"
         android:padding="10dp"
-        android:textColorHint="@color/hintText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sendMessageText" />
@@ -114,7 +113,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="58dp"
         android:background="@drawable/login_button_background"
-        android:text="Fullfør"
+        android:text="@string/complete"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/messageEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
