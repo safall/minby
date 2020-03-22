@@ -11,21 +11,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import kotlinx.android.synthetic.main.activity_launcher.*
 
-class LauncherFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = LauncherFragment()
-    }
+class LauncherFragment : Fragment(R.layout.launcher_fragment) {
 
     private lateinit var viewModel: LauncherViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.launcher_fragment, container, false)
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
