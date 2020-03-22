@@ -78,4 +78,9 @@ class LoginFragment : Fragment() {
         callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LoginManager.getInstance().unregisterCallback(callbackManager)
+    }
 }
