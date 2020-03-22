@@ -86,7 +86,6 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-
     override fun onCleared() {
         super.onCleared()
         facebookAuthUseCase.removeAuthenticationCallback()
