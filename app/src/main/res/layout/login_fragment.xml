@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:elevation="4dp"
         android:background="@color/yellow"
+        android:elevation="4dp"
         android:orientation="vertical">
 
         <TextView
@@ -20,15 +20,15 @@
             android:layout_marginTop="49dp"
             android:gravity="center"
             android:text="@string/minby"
-            android:textStyle="bold"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="108dp"
-            android:text="@string/logg_in"
             android:gravity="center"
+            android:text="@string/logg_in"
             android:textColor="@color/black"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -36,19 +36,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="13sp"
             android:layout_marginTop="10dp"
-            android:text="@string/har_du_ikke" />
+            android:gravity="center"
+            android:text="@string/har_du_ikke"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
         <TextView
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="@string/register_d"
             android:textColor="@color/black"
-            android:textSize="13sp"
-            android:text="@string/register_d" />
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/facebookButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/button_bg_facebook"
+            android:drawableStart="@drawable/com_facebook_button_icon"
+            android:drawablePadding="12dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/continue_with_facebook"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,30 +82,31 @@
             android:layout_height="40dp"
             android:layout_marginTop="75dp"
             android:autofillHints="@string/mailaddress"
+            android:background="@drawable/edittext_background"
             android:hint="@string/mailaddress"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black"
             android:paddingStart="8dp"
             android:paddingEnd="0dp"
-            android:background="@drawable/edittext_background"
-            tools:text="Mail Address"
+            android:textColor="@color/black"
             android:textColorHint="@color/light_darg"
-            tools:targetApi="o" />
+            tools:targetApi="o"
+            tools:text="Mail Address" />
+
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="24dp"
             android:autofillHints="@string/Password"
+            android:background="@drawable/edittext_background"
             android:hint="@string/Password"
-            tools:text="Passord"
+            android:inputType="textWebPassword"
             android:paddingStart="8dp"
             android:paddingEnd="0dp"
-            android:inputType="textWebPassword"
-            android:background="@drawable/edittext_background"
             android:textColor="@color/black"
             android:textColorHint="@color/light_darg"
-            tools:targetApi="o" />
+            tools:targetApi="o"
+            tools:text="Passord" />
 
         <Button
             android:id="@+id/loginButton"
@@ -97,8 +115,8 @@
             android:layout_marginTop="36dp"
             android:alpha="0.5"
             android:background="@drawable/login_button_background"
-            android:textColor="@color/white"
-            android:text="@string/logg_in" />
+            android:text="@string/logg_in"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>
