@@ -7,14 +7,14 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule(private val applicationContext: Context) {
+class ApplicationModule(private val context: Context) {
 
-    @Provides fun provideApplicationContext(): Context = applicationContext
+    @Provides fun provideApplicationContext(): Context = context
 
     @Provides
     @Singleton
     internal fun provideConnectivityManager(): ConnectivityManager {
-        return applicationContext
+        return context
             .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     }
 }
