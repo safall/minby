@@ -16,7 +16,7 @@
         app:layout_constraintHeight_percent=".5"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
-        android:id="@+id/minbyText"
+        android:id="@+id/minby"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
@@ -39,14 +39,14 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/minbyText" />
+        app:layout_constraintTop_toBottomOf="@+id/minby" />
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/eksisterend"
-        android:textColor="@color/hintText"
+        android:textColor="@color/lightgrey"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,8 @@
         android:background="@drawable/edittext_background"
         android:hint="@string/Password"
         android:paddingStart="16dp"
-        android:textColor="@color/hintText"
+        android:paddingEnd="0dp"
+        android:textColor="@color/lightgrey"
         android:textColorHint="@color/light_darg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +90,8 @@
         android:background="@drawable/edittext_background"
         android:hint="@string/Bekreftpassword"
         android:paddingStart="16dp"
-        android:textColor="@color/hintText"
+        android:paddingEnd="0dp"
+        android:textColor="@color/lightgrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
