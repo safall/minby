@@ -26,4 +26,6 @@
     <string name="facebook_app_id">570257243697104</string>
     <string name="fb_login_protocol_scheme">fb570257243697104</string>
     <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="server_client_id">359724204371-cgnp26p4k1knt85bm35ik7r8713dm3ds.apps.googleusercontent.com</string>
+    <string name="continue_with_google">Continue with Google</string>
 </resources>

@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:elevation="4dp"
         android:background="@color/yellow"
+        android:elevation="4dp"
         android:orientation="vertical">
 
         <TextView
@@ -57,20 +57,26 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/loginIdLink"
+            android:id="@+id/googleButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="48dp"
+            android:background="@color/light_white"
+            android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
             android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/continue_with_google"
             android:textColor="@color/black"
-            android:text="@string/loginLink" />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_weight="1"
+        android:orientation="vertical"
         android:paddingStart="58dp"
         android:paddingEnd="58dp">
 
