@@ -10,5 +10,5 @@
     <color name="light_white">#F2F2F2</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#F7F7F7</color>
-    <color name="hintText">#AFAFAF</color>
+    <color name="lightgrey">#AFAFAF</color>
 </resources>
