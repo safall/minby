@@ -1,7 +1,6 @@
 package com.afi.minby.auth
 
 import android.content.Intent
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -14,7 +13,7 @@ import javax.inject.Singleton
 class FacebookAuthUseCase @Inject constructor(private val callbackManager: CallbackManager) {
 
     private val loginPermissions = listOf(
-        "email"
+        "email", "public_profile"
     )
 
     fun authenticate(fragment: Fragment) {
@@ -22,7 +21,6 @@ class FacebookAuthUseCase @Inject constructor(private val callbackManager: Callb
     }
 
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.d("zzz2", "callback")
         callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
