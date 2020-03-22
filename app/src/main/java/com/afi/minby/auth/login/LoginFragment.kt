@@ -51,7 +51,7 @@ class LoginFragment : Fragment() {
         }
 
         loginButton.setOnClickListener {
-            viewModel.attemptLogin(mailId.text.toString(), passwordEditText.text.toString())
+            viewModel.attemptLogin(emailEditText.text.toString(), passwordEditText.text.toString())
         }
 
         registerButton.setOnClickListener {
