@@ -44,7 +44,7 @@ class MessageFragment : Fragment(R.layout.message_fragment) {
         if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
             val text =
                 data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
-            messageText.text = text[0]
+            messageText.setText(text[0])
         }
     }
 }
