@@ -12,8 +12,12 @@ import com.afi.minby.message.viewmodel.MessageViewModel
 import kotlinx.android.synthetic.main.message_fragment.*
 
 class MessageFragment : Fragment(R.layout.message_fragment) {
+
+    companion object {
+        private const val VOICE_RECOGNITION_REQUEST_CODE = 200
+    }
+
     private lateinit var viewModel: MessageViewModel
-    private var VOICE_RECOGNITION_REQUEST_CODE = 200
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -30,7 +34,7 @@ class MessageFragment : Fragment(R.layout.message_fragment) {
                 RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
             )
-            putExtra(RecognizerIntent.EXTRA_PROMPT, "Hi, Speak something...")
+            putExtra(RecognizerIntent.EXTRA_PROMPT, getString(R.string.message_hint))
         }
         this.startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE)
     }
@@ -40,7 +44,7 @@ class MessageFragment : Fragment(R.layout.message_fragment) {
         if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
             val text =
                 data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
-            messageEditText.text = text[0]
+            messageText.text = text[0]
         }
     }
 }
