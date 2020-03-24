@@ -95,21 +95,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadedImageView" />
 
-    <EditText
-        android:id="@+id/messageEditText"
+
+    <TextView
+        android:id="@+id/messageText"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
-        android:elevation="4dp"
         android:gravity="top"
         android:hint="Feel free to enter a description of the idea. Maximum 300 characters"
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/sendMessageText" />
+
+    <ImageView
+        android:id="@+id/voiceIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:onClick="voiceToText"
+        android:elevation="4dp"
+        android:src="@drawable/voice_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/messageText"
+        app:layout_constraintRight_toRightOf="@id/messageText" />
 
     <Button
         android:id="@+id/submitButton"
@@ -121,5 +133,5 @@
         android:background="@drawable/login_button_background"
         android:text="@string/complete"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/messageEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/messageText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
