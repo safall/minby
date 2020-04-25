@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.afi.minby.auth.FacebookAuthUseCase
 import com.afi.minby.auth.GoogleAuthUseCase
+import com.afi.minby.repository.RemoteRepository
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
@@ -13,19 +14,24 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(
     private val facebookAuthUseCase: FacebookAuthUseCase,
-    private val googleAuthUseCase: GoogleAuthUseCase
-) :
-    ViewModel() {
+    private val googleAuthUseCase: GoogleAuthUseCase,
+    private val repository: RemoteRepository
+) : ViewModel() {
 
     private val facebookObserver = FacebookObserver()
     val fbuseCaseLiveData: MutableLiveData<FacebookAuthUseCase> = MutableLiveData()
     val googleUseCaseLiveData: MutableLiveData<GoogleAuthUseCase> = MutableLiveData()
     val authenticationSuccessful: MutableLiveData<Boolean> = MutableLiveData()
     val silentAuthenticationFailed: MutableLiveData<Boolean> = MutableLiveData()
+
+    private val disposable = CompositeDisposable()
 
     fun initFBLogin() {
         facebookAuthUseCase.logOut()
@@ -38,7 +44,16 @@ class LoginViewModel @Inject constructor(
     }
 
     fun attemptLogin(email: String, password: String) {
-        authenticationSuccessful.postValue(true)
+        disposable.add(
+            repository.login(email, password)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    authenticationSuccessful.postValue(true)
+                }, {
+                    authenticationSuccessful.postValue(false)
+                })
+        )
     }
 
     private inner class FacebookObserver : FacebookCallback<LoginResult> {
@@ -89,5 +104,6 @@ class LoginViewModel @Inject constructor(
     override fun onCleared() {
         super.onCleared()
         facebookAuthUseCase.removeAuthenticationCallback()
+        disposable.dispose()
     }
 }

@@ -102,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/googleButton" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="58dp"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/registerButton"
         tools:text="Mail Address" />
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="58dp"
@@ -132,7 +132,7 @@
         android:textColor="@color/lightGrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
+        app:layout_constraintTop_toBottomOf="@+id/email"
         tools:text=" Password" />
     <Button
         android:id="@+id/loginButton"
@@ -145,5 +145,5 @@
         android:text="@string/logg_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 </androidx.constraintlayout.widget.ConstraintLayout>
