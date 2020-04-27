@@ -20,6 +20,7 @@
     <string name="message_hint">Hi, speak something...</string>
     <string name="minby">MinBy</string>
     <string name="Password">Password</string>
+    <string name="Password_not_matched"> Password not matched</string>
     <string name="sign_up">Sign up today</string>
     <string name="register">Register</string>
     <string name="settings">settings</string>
