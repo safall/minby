@@ -40,7 +40,11 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.afi.minby.auth.signup.SignUpFragment"
-        tools:layout="@layout/sign_up_fragment" />
+        tools:layout="@layout/sign_up_fragment">
+        <action
+            android:id="@+id/signupToHomeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
 
     <activity
         android:id="@+id/homeActivity"
