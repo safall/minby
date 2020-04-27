@@ -4,6 +4,7 @@ import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.afi.minby.R
 import com.afi.minby.auth.FacebookAuthUseCase
 import com.afi.minby.auth.GoogleAuthUseCase
 import com.afi.minby.repository.RemoteRepository
@@ -14,7 +15,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -25,19 +25,18 @@ class SignUpViewModel @Inject constructor(
     private val repository: RemoteRepository
 
 ) : ViewModel() {
-
-    private val facebookObserver = FacebookObserver()
     val fbuseCaseLiveData: MutableLiveData<FacebookAuthUseCase> = MutableLiveData()
     val googleUseCaseLiveData: MutableLiveData<GoogleAuthUseCase> = MutableLiveData()
     val registerUser: MutableLiveData<Boolean> = MutableLiveData()
     val registrationFailed: MutableLiveData<String> = MutableLiveData()
+    private val facebookObserver = FacebookObserver()
     private val disposable = CompositeDisposable()
-
     fun initFBRegister() {
         facebookAuthUseCase.logOut()
         facebookAuthUseCase.setAuthenticationCallback(facebookObserver)
         fbuseCaseLiveData.postValue(facebookAuthUseCase)
     }
+
     fun initGoogleRegister() {
         googleUseCaseLiveData.postValue(googleAuthUseCase)
     }
@@ -45,10 +44,10 @@ class SignUpViewModel @Inject constructor(
     fun attemptRegister(email: String, password: String, conformpassword: String) {
 
         if (password.isNullOrEmpty() != conformpassword.isNullOrEmpty()) {
-            registrationFailed.postValue("Password not matched")
+            registrationFailed.postValue(R.string.Password_not_matched.toString())
             return
         }
-            disposable.add(
+        disposable.add(
                 repository.signup(email, password)
                     .subscribeOn(Schedulers.io())
                     .observeOn(io.reactivex.android.schedulers.AndroidSchedulers.mainThread())
@@ -57,30 +56,30 @@ class SignUpViewModel @Inject constructor(
                     }, {
                         registerUser.postValue(true)
                     })
-            )
+        )
     }
-    private inner class FacebookObserver : FacebookCallback<LoginResult> {
 
+    private inner class FacebookObserver : FacebookCallback<LoginResult> {
         override fun onSuccess(result: LoginResult?) {
             val accessToken = result?.accessToken?.token
             Log.d("accessToken facebook", accessToken.toString())
             registerUser.postValue(true)
         }
-
         override fun onCancel() {
             Log.d("cancelled", "cancelled")
         }
-
         override fun onError(error: FacebookException?) {
             Log.d("Error", error?.message.toString())
         }
     }
+
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         facebookAuthUseCase.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 200) {
             checkForGoogleAuthResult(data)
         }
     }
+
     private fun checkForGoogleAuthResult(data: Intent?) {
         val task = GoogleSignIn.getSignedInAccountFromIntent(data)
         checkForLogin(task, false)

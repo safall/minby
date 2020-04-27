@@ -38,6 +38,7 @@ class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
                 rePasswordSignup.text.toString()
             )
         }
+
         facebookSignup.setOnClickListener {
             viewModel.initFBRegister()
         }
@@ -53,6 +54,7 @@ class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
         viewModel.fbuseCaseLiveData.observe(this, Observer {
             it.authenticate(this)
         })
+
         viewModel.googleUseCaseLiveData.observe(this, Observer {
             client = it.getGoogleSignInClient(requireActivity())
             client.silentSignIn().addOnCompleteListener {
@@ -61,8 +63,9 @@ class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
         })
 
         viewModel.registrationFailed.observe(this, Observer {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         })
+
         viewModel.registerUser.observe(this, Observer {
             if (it) {
                 NavHostFragment.findNavController(host_fragment).navigate(R.id.signupToHomeActivity)
@@ -78,6 +81,7 @@ class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
             }
         })
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         viewModel.onActivityResult(requestCode, resultCode, data)
