@@ -1,16 +1,17 @@
 package com.afi.minby.home
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
 import com.afi.minby.core.inflate
 
-class HomeMenuAdapter : RecyclerView.Adapter<HomeMenuViewHolder>() {
+class HomeMenuAdapter internal constructor(private var itemCallback: AdapterCallback) : RecyclerView.Adapter<HomeMenuViewHolder>() {
 
     var items = listOf<HomeMenuItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeMenuViewHolder {
-        return HomeMenuViewHolder(parent.context.inflate(R.layout.home_menu_item))
+        return HomeMenuViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.home_menu_item, parent,false), itemCallback)
     }
 
     override fun getItemCount(): Int {
