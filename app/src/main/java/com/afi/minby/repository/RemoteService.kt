@@ -19,5 +19,5 @@ interface RemoteService {
     fun signup(@Field("email")username: String, @Field("password") password: String): Single<User>
 
     @GET("home")
-    fun home(): Single<List<HomeMenuItem>>
+    fun getHomeMenuItems(): Single<List<HomeMenuItem>>
 }

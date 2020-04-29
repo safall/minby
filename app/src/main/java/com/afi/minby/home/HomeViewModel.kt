@@ -16,12 +16,12 @@ class HomeViewModel @Inject constructor(
     val showError: MutableLiveData<String> = MutableLiveData()
     val homeMenuItems: MutableLiveData<List<HomeMenuItem>> = MutableLiveData()
     val homeMenuItem_: MutableLiveData<List<HomeMenuItem>>
-    get() = homeMenuItems
+        get() = homeMenuItems
     private val disposable = CompositeDisposable()
 
     fun addHomeMenuItems() {
         disposable.add(
-            repository.home()
+            repository.getHomeMenuItems()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ result ->

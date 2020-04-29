@@ -14,7 +14,7 @@ class RemoteRepository @Inject constructor(private val remoteService: RemoteServ
     fun signup(username: String, password: String): Single<User> {
         return remoteService.signup(username, password)
     }
-    fun home(): Single<List<HomeMenuItem>> {
-        return remoteService.home()
+    fun getHomeMenuItems(): Single<List<HomeMenuItem>> {
+        return remoteService.getHomeMenuItems()
     }
 }

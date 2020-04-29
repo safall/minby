@@ -11,11 +11,12 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.core.VerticalSpaceDecoration
 import com.afi.minby.di.MinByApplication
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.home_fragment.*
-import javax.inject.Inject
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
+
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: HomeViewModel
@@ -30,7 +31,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.addHomeMenuItems()
-        this.observeHomeMenuItems()
+        observeHomeMenuItems()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,7 +50,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
 
     private fun observeHomeMenuItems() {
         viewModel.homeMenuItem_.observe(this, Observer {
-            addItem(it)
+            updateItems(it)
         })
 
         viewModel.isEmpty.observe(this, Observer {
@@ -61,7 +62,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         })
     }
 
-    private fun addItem(items: List<HomeMenuItem>) {
+    private fun updateItems(items: List<HomeMenuItem>) {
         homeMenuAdapter.items = items
         homeMenuAdapter.notifyDataSetChanged()
     }
