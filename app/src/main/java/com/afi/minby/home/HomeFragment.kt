@@ -49,7 +49,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
     }
 
     private fun observeHomeMenuItems() {
-        viewModel.homeMenuItem_.observe(this, Observer {
+        viewModel.gethomeMenuItems_.observe(this, Observer {
             updateItems(it)
         })
 

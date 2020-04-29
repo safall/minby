@@ -14,9 +14,9 @@ class HomeViewModel @Inject constructor(
 
     val isEmpty: MutableLiveData<Boolean> = MutableLiveData()
     val showError: MutableLiveData<String> = MutableLiveData()
-    val homeMenuItems: MutableLiveData<List<HomeMenuItem>> = MutableLiveData()
-    val homeMenuItem_: MutableLiveData<List<HomeMenuItem>>
-        get() = homeMenuItems
+    val gethomeMenuItems: MutableLiveData<List<HomeMenuItem>> = MutableLiveData()
+    val gethomeMenuItems_: MutableLiveData<List<HomeMenuItem>>
+        get() = gethomeMenuItems
     private val disposable = CompositeDisposable()
 
     fun addHomeMenuItems() {
@@ -28,11 +28,11 @@ class HomeViewModel @Inject constructor(
                     if (result.isEmpty()) {
                         isEmpty.postValue(true)
                     } else {
-                        homeMenuItems.postValue(getDummyData())
+                        gethomeMenuItems.postValue(getDummyData())
                     }
                 }) {
                     showError.postValue(it.message)
-                    homeMenuItems.postValue(getDummyData())
+                    gethomeMenuItems.postValue(getDummyData())
                 }
         )
     }
