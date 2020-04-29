@@ -38,7 +38,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         homeMenuAdapter = HomeMenuAdapter(object : AdapterCallback {
             override fun <T> onItemClicked(item: T) {
                 NavHostFragment.findNavController(hostFragment)
-                    .navigate(R.id.homeFragmentToMessageFragment)
+                    .navigate(R.id.homeFragmentToCategoriesFragment)
             }
         })
         with(recyclerView) {

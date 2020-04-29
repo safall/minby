@@ -11,8 +11,8 @@
         tools:layout="@layout/home_fragment">
 
         <action
-            android:id="@+id/homeFragmentToMessageFragment"
-            app:destination="@id/issueFragment" />
+            android:id="@+id/homeFragmentToCategoriesFragment"
+            app:destination="@id/categoriesFragment" />
     </fragment>
 
     <fragment
