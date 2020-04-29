@@ -18,7 +18,11 @@
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.afi.minby.categories.CategoriesFragment"
-        tools:layout="@layout/categories_fragment" />
+        tools:layout="@layout/categories_fragment">
+        <action
+            android:id="@+id/categoriesFragmentTomessageFragment"
+            app:destination="@+id/issueFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/issueFragment"
