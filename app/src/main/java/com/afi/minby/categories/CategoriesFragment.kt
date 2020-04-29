@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
@@ -14,6 +15,8 @@ import com.afi.minby.categories.model.CategoriesEnum
 import com.afi.minby.categories.model.Category
 import com.afi.minby.core.ArtworkUtils
 import com.afi.minby.core.CategoriesItemDecoration
+import com.afi.minby.home.AdapterCallback
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.categories_fragment.*
 
 class CategoriesFragment : Fragment(R.layout.categories_fragment) {
@@ -30,7 +33,12 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
             view.context
         ) / 3
 
-        categoriesAdapter = CategoriesAdapter(artworkSize)
+        categoriesAdapter = CategoriesAdapter(artworkSize, object : AdapterCallback {
+            override fun <T> onItemClicked(item: T) {
+                NavHostFragment.findNavController(hostFragment)
+                    .navigate(R.id.categoriesFragmentTomessageFragment)
+            }
+        })
         with(recyclerView) {
             adapter = categoriesAdapter
             layoutManager = getGridLayoutManager()

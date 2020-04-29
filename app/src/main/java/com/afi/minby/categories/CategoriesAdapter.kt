@@ -9,8 +9,10 @@ import com.afi.minby.categories.viewholder.AnotherCategoryViewHolder
 import com.afi.minby.categories.viewholder.CategoryItemViewHolder
 import com.afi.minby.categories.viewholder.SubmitButtonViewHolder
 import com.afi.minby.core.inflate
+import com.afi.minby.home.AdapterCallback
 
-class CategoriesAdapter(val artworkSize: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CategoriesAdapter(val artworkSize: Int, private val itemCallback: AdapterCallback) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var items = listOf<Category>()
 
@@ -22,13 +24,19 @@ class CategoriesAdapter(val artworkSize: Int) : RecyclerView.Adapter<RecyclerVie
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            VIEW_HOLDER_SUBMIT_BUTTON -> SubmitButtonViewHolder(parent.context.inflate(R.layout.submit_button_item))
-            VIEW_HOLDER_ANOTHER_CATEGORY -> AnotherCategoryViewHolder(parent.context.inflate(R.layout.another_category_item))
+            VIEW_HOLDER_SUBMIT_BUTTON -> SubmitButtonViewHolder(
+                parent.context.inflate(R.layout.submit_button_item),
+                itemCallback
+            )
+            VIEW_HOLDER_ANOTHER_CATEGORY -> AnotherCategoryViewHolder(
+                parent.context.inflate(R.layout.another_category_item),
+                itemCallback
+            )
             VIEW_HOLDER_CATEGORY -> {
                 val view = LayoutInflater
                     .from(parent.context)
                     .inflate(R.layout.category_item, parent, false)
-                CategoryItemViewHolder(view, artworkSize)
+                CategoryItemViewHolder(view, artworkSize, itemCallback)
             }
             else -> throw IllegalArgumentException("No such view type found")
         }
