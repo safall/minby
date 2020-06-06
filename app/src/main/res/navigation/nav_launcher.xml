@@ -17,9 +17,6 @@
             app:popUpTo="@id/nav_launcher"
             app:popUpToInclusive="true" />
 
-        <action
-            android:id="@+id/launcherToSignupFragment"
-            app:destination="@id/signUpFragment" />
     </fragment>
 
 
