@@ -8,19 +8,16 @@ import java.util.concurrent.TimeUnit
 
 class LauncherViewModel : ViewModel() {
 
-    var loadHomePage = MutableLiveData<Boolean>()
+    var loadHomePage = MutableLiveData<Unit>()
 
-    private lateinit var disposable: Disposable
+    private var disposable: Disposable? = null
 
     fun delay() {
         disposable = Observable.timer(2, TimeUnit.SECONDS)
-            .subscribe {
-                loadHomePage.postValue(true)
-            }
+            .subscribe { loadHomePage.postValue(Unit) }
     }
 
     override fun onCleared() {
-        super.onCleared()
-        disposable.dispose()
+        disposable?.dispose()
     }
 }
