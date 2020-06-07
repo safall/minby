@@ -12,7 +12,8 @@ class LauncherViewModel : ViewModel() {
 
     private var disposable: Disposable? = null
 
-    fun delay() {
+    fun start() {
+        disposable?.dispose()
         disposable = Observable.timer(2, TimeUnit.SECONDS)
             .subscribe { loadHomePage.postValue(Unit) }
     }
