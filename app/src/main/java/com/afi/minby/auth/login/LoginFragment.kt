@@ -3,6 +3,7 @@ package com.afi.minby.auth.login
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,9 +13,10 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.fragment_login.*
+import javax.inject.Inject
+
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
@@ -45,11 +47,15 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         register.setOnClickListener {
+            val animZoomIn = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
+            circularView.startAnimation(animZoomIn)
             confirmPassword.visibility = View.VISIBLE
             backIcon.visibility = View.VISIBLE
         }
 
         backIcon.setOnClickListener {
+            val animZoomOut = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
+            circularView.startAnimation(animZoomOut)
             backIcon.visibility = View.GONE
             confirmPassword.visibility = View.GONE
         }
