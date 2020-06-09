@@ -2,8 +2,8 @@
 <resources>
     <color name="black">#000000</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#C6C6C6</color>
+    <color name="colorPrimaryDark">#55AEFF</color>
     <color name="facebook_light">#1877F2</color>
     <color name="green">#00d115</color>
     <color name="grey">#F7F7F7</color>

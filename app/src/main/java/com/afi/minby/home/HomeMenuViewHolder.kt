@@ -15,7 +15,7 @@ class HomeMenuViewHolder(val view: View, private val itemCallback: AdapterCallba
     fun bind(items: HomeMenuItem) {
         data = items
         view.title.text = items.title
-        view.desc.text = items.desc
+        view.subtitle.text = items.desc
         itemView.setOnClickListener(onItemSelected)
     }
 }
