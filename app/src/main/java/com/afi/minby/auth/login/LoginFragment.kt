@@ -14,9 +14,9 @@ import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_launcher.*
-import kotlinx.android.synthetic.main.login_fragment.*
+import kotlinx.android.synthetic.main.fragment_login.*
 
-class LoginFragment : Fragment(R.layout.login_fragment) {
+class LoginFragment : Fragment(R.layout.fragment_login) {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -32,11 +32,11 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        facebookButton.setOnClickListener {
+        facebook.setOnClickListener {
             viewModel.initFBLogin()
         }
 
-        googleButton.setOnClickListener {
+        google.setOnClickListener {
             viewModel.initGoogleLogin()
         }
 
@@ -44,9 +44,14 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
             viewModel.attemptLogin(password.text.toString(), password.text.toString())
         }
 
-        registerButton.setOnClickListener {
-            NavHostFragment.findNavController(host_fragment)
-                .navigate(R.id.loginTosignUpFragment)
+        register.setOnClickListener {
+            confirmPassword.visibility = View.VISIBLE
+            backIcon.visibility = View.VISIBLE
+        }
+
+        backIcon.setOnClickListener {
+            backIcon.visibility = View.GONE
+            confirmPassword.visibility = View.GONE
         }
     }
 
