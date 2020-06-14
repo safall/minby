@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/grey"
+    android:orientation="vertical"
     tools:context=".categories.CategoriesFragment">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/select_catagories"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.SearchView
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="58dp"
-        android:background="@color/yellow" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_back"
+        android:elevation="10dp"
+        android:src="@drawable/ic_chevron_left"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="30dp"
-        tools:listitem="@layout/category_item"/>
-</LinearLayout>
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/backIcon"
+        tools:itemCount="3"
+        tools:listitem="@layout/category_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>

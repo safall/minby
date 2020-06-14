@@ -8,6 +8,6 @@ import kotlinx.android.synthetic.main.another_category_item.view.*
 class AnotherCategoryViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(item: Category) {
-        view.anotherButton.text = "Annet"
+        view.anotherButton.text = item.name
     }
 }

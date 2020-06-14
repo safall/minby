@@ -5,4 +5,4 @@
     android:layout_height="wrap_content"
     android:background="@drawable/another_category_background"
     android:text="@string/another"
-    android:textColor="@color/black" />
+    android:textColor="@color/colorPrimaryDark" />

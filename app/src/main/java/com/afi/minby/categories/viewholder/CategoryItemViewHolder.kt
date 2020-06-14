@@ -9,17 +9,19 @@ import com.afi.minby.categories.model.CategoriesEnum
 import com.afi.minby.categories.model.Category
 import kotlinx.android.synthetic.main.category_item.view.*
 
-class CategoryItemViewHolder(val view: View, val artworkSize: Int) : RecyclerView.ViewHolder(view) {
+class CategoryItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(item: Category) {
-        view.categoryName.text = item.name
-        setWidth(artworkSize)
-        view.categoryImage.setImageDrawable(item.iconId?.let { getIconFromDrawable(it) }?.let {
-            ContextCompat.getDrawable(
-                view.context,
-                it
+        with(view) {
+            cardView.setCardBackgroundColor(item.color)
+            categoryName.text = item.name
+            categoryImage.setImageDrawable(
+                ContextCompat.getDrawable(
+                    view.context,
+                    getIconFromDrawable(item.iconId)
+                )
             )
-        })
+        }
     }
 
     @DrawableRes
@@ -31,12 +33,7 @@ class CategoryItemViewHolder(val view: View, val artworkSize: Int) : RecyclerVie
             CategoriesEnum.SOCIAL -> R.drawable.ic_social
             CategoriesEnum.ACTIVITIES -> R.drawable.ic_activities
             CategoriesEnum.ORGANISATION -> R.drawable.ic_organisation
+            else -> 0
         }
-    }
-
-    fun setWidth(width: Int) {
-        val layoutParams = itemView.layoutParams
-        layoutParams.width = width
-        view.layoutParams = layoutParams
     }
 }

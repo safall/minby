@@ -29,4 +29,12 @@
     <string name="submit">Submit</string>
     <string name="thank_you">Tusen \n takk!</string>
     <string name="we_build_city_together">Vi bygger byen sammen</string>
+
+
+    <string name="social">sosial</string>
+    <string name="building_and_construction">Bygg og Anlegg</string>
+    <string name="nature_and_green">Natur og grønt</string>
+    <string name="activities_and_training">Aktiviteter og trening</string>
+    <string name="technology">Teknologi</string>
+    <string name="organisation">Organisasjon</string>
 </resources>
