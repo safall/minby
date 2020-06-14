@@ -7,8 +7,10 @@ import android.speech.RecognizerIntent
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.sendidea.enterdetails.viewmodel.EnterDetailsViewModel
+import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_details_fragment.*
 
 class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
@@ -22,6 +24,13 @@ class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         voiceIcon.setOnClickListener { speak() }
+        nextButton.setOnClickListener {
+            val bundle = Bundle().apply {
+                arguments?.putString("ARG_DESCRIPTION", description.text.toString())
+            }
+            NavHostFragment.findNavController(host_fragment)
+                .navigate(R.id.enterDetailsFragmentToSummaryDetailsFragment, bundle)
+        }
     }
 
     private fun speak() {

@@ -3,13 +3,16 @@ package com.afi.minby.sendidea.categories
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
+import com.afi.minby.core.CategoriesItemDecoration
+import com.afi.minby.home.AdapterCallback
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.sendidea.categories.model.CategoriesList
-import com.afi.minby.core.CategoriesItemDecoration
+import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.categories_fragment.*
 
 class CategoriesFragment : Fragment(R.layout.categories_fragment) {
@@ -18,7 +21,14 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoriesAdapter = CategoriesAdapter(CategoriesList.getCategories(requireContext()))
+        categoriesAdapter = CategoriesAdapter(
+            CategoriesList.getCategories(requireContext()),
+            object : AdapterCallback {
+                override fun <T> onItemClicked(item: T) {
+                   NavHostFragment.findNavController(host_fragment).navigate(R.id.categoriesFragmentToEnterDetailsFragment)
+                }
+
+            })
         with(recyclerView) {
             adapter = categoriesAdapter
             layoutManager = getGridLayoutManager()

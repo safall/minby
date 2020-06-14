@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_send_idea"
+    app:startDestination="@id/launcherFragment">
+
+    <fragment
+        android:id="@+id/launcherFragment"
+        android:name="com.afi.minby.sendidea.categories.CategoriesFragment"
+        tools:layout="@layout/categories_fragment">
+
+        <action
+            android:id="@+id/categoriesFragmentToEnterDetailsFragment"
+            app:destination="@id/enterDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enterDetailsFragment"
+        android:name="com.afi.minby.sendidea.enterdetails.EnterDetailsFragment"
+        tools:layout="@layout/enter_details_fragment">
+
+        <action
+            android:id="@+id/enterDetailsFragmentToSummaryDetailsFragment"
+            app:destination="@id/summaryDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/summaryDetailsFragment"
+        android:name="com.afi.minby.sendidea.summarydetails.SummaryDetailsFragment"
+        tools:layout="@layout/summary_details_fragment">
+        <action
+            android:id="@+id/summaryDetailsFragmentToThankYouFragment"
+            app:destination="@id/thankYouFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thankYouFragment"
+        android:name="com.afi.minby.sendidea.thankyou.ThankYouFragment"
+        tools:layout="@layout/final_thankyou_view" />
+</navigation>
