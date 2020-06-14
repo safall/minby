@@ -3,7 +3,6 @@
     <string name="select_catagories">Velg Kategories</string>
     <string name="select_an_image">Velg et bilde</string>
     <string name="take_a_picture">Ta bilde</string>
-    <string name="library">Bibliotek</string>
     <string name="give_a_description">Gi en beskrivelse</string>
     <string name="complete">Complete</string>
     <string name="another">annet</string>
@@ -37,4 +36,11 @@
     <string name="activities_and_training">Aktiviteter og trening</string>
     <string name="technology">Teknologi</string>
     <string name="organisation">Organisasjon</string>
+
+    <string name="gallery">Bibliotek</string>
+    <string name="camera">Kamera</string>
+    <string name="max_500_characters">Maks 500 tegn</string>
+    <string name="record_instead">Ta opp i stedet</string>
+    <string name="next">Neste</string>
+    <string name="enter_details">Angi detaljer</string>
 </resources>
