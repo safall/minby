@@ -36,4 +36,11 @@
     <string name="complete">Complete</string>
     <string name="finish">Finish</string>
     <string name="login_or_signup_with">Login or signup with</string>
+
+    <string name="social">Social</string>
+    <string name="building_and_construction">Building and Construction</string>
+    <string name="nature_and_green">Nature and Green</string>
+    <string name="activities_and_training">Activities and Training</string>
+    <string name="technology">Technology</string>
+    <string name="organisation">Organisation</string>
 </resources>
