@@ -15,6 +15,6 @@
 
     <style name="Body" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/raleway_medium</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/colorBodyText</item>
     </style>
 </resources>

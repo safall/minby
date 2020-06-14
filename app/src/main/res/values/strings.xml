@@ -43,4 +43,11 @@
     <string name="activities_and_training">Activities and Training</string>
     <string name="technology">Technology</string>
     <string name="organisation">Organisation</string>
+
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="max_500_characters">Max 500 characters</string>
+    <string name="record_instead">Record instead</string>
+    <string name="next">Next</string>
+    <string name="enter_details">Enter Details</string>
 </resources>

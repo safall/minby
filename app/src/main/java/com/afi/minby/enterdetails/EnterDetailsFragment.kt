@@ -1,4 +1,4 @@
-package com.afi.minby.message
+package com.afi.minby.enterdetails
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
@@ -6,23 +6,18 @@ import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import com.afi.minby.R
-import com.afi.minby.message.viewmodel.MessageViewModel
-import kotlinx.android.synthetic.main.message_fragment.*
+import com.afi.minby.enterdetails.viewmodel.EnterDetailsViewModel
+import kotlinx.android.synthetic.main.enter_details_fragment.*
 
-class MessageFragment : Fragment(R.layout.message_fragment) {
+class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
 
     companion object {
         private const val VOICE_RECOGNITION_REQUEST_CODE = 200
     }
 
-    private lateinit var viewModel: MessageViewModel
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MessageViewModel::class.java)
-    }
+    private val viewModel: EnterDetailsViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,7 +40,7 @@ class MessageFragment : Fragment(R.layout.message_fragment) {
         if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
             val text =
                 data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
-            messageText.setText(text[0])
+            description.setText(text[0])
         }
     }
 }

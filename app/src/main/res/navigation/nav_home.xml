@@ -22,6 +22,6 @@
 
     <fragment
         android:id="@+id/issueFragment"
-        android:name="com.afi.minby.message.MessageFragment"
-        tools:layout="@layout/message_fragment" />
+        android:name="com.afi.minby.enterdetails.EnterDetailsFragment"
+        tools:layout="@layout/enter_details_fragment" />
 </navigation>
