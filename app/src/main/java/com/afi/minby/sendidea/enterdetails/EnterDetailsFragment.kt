@@ -1,4 +1,4 @@
-package com.afi.minby.enterdetails
+package com.afi.minby.sendidea.enterdetails
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.afi.minby.R
-import com.afi.minby.enterdetails.viewmodel.EnterDetailsViewModel
+import com.afi.minby.sendidea.enterdetails.viewmodel.EnterDetailsViewModel
 import kotlinx.android.synthetic.main.enter_details_fragment.*
 
 class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {

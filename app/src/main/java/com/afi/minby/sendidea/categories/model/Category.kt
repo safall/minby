@@ -1,4 +1,4 @@
-package com.afi.minby.categories.model
+package com.afi.minby.sendidea.categories.model
 
 import java.io.Serializable
 

@@ -1,4 +1,4 @@
-package com.afi.minby.categories
+package com.afi.minby.sendidea.categories
 
 import android.os.Bundle
 import android.view.View
@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
-import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
-import com.afi.minby.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
-import com.afi.minby.categories.model.CategoriesList
+import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
+import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
+import com.afi.minby.sendidea.categories.model.CategoriesList
 import com.afi.minby.core.CategoriesItemDecoration
 import kotlinx.android.synthetic.main.categories_fragment.*
 
