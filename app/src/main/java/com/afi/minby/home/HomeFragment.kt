@@ -11,9 +11,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.core.VerticalSpaceDecoration
 import com.afi.minby.di.MinByApplication
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.home_fragment.*
+import javax.inject.Inject
 
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
@@ -39,7 +39,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         homeMenuAdapter = HomeMenuAdapter(object : AdapterCallback {
             override fun <T> onItemClicked(item: T) {
                 NavHostFragment.findNavController(hostFragment)
-                    .navigate(R.id.homeFragmentToCategoriesFragment)
+                    .navigate(R.id.sendIdeaActivity)
             }
         })
         with(recyclerView) {

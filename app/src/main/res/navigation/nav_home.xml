@@ -11,17 +11,12 @@
         tools:layout="@layout/home_fragment">
 
         <action
-            android:id="@+id/homeFragmentToCategoriesFragment"
+            android:id="@+id/homeFragmentToSendIdeaActivity"
             app:destination="@id/categoriesFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/categoriesFragment"
-        android:name="com.afi.minby.sendidea.categories.CategoriesFragment"
-        tools:layout="@layout/categories_fragment" />
-
-    <fragment
-        android:id="@+id/issueFragment"
-        android:name="com.afi.minby.sendidea.enterdetails.EnterDetailsFragment"
-        tools:layout="@layout/enter_details_fragment" />
+    <activity
+        android:id="@+id/sendIdeaActivity"
+        android:name="com.afi.minby.sendidea.SendIdeaActivity"
+        tools:layout="@layout/activity_send_idea" />
 </navigation>

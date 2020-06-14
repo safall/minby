@@ -3,12 +3,14 @@ package com.afi.minby.sendidea.categories
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
+import com.afi.minby.core.inflate
+import com.afi.minby.home.AdapterCallback
 import com.afi.minby.sendidea.categories.model.Category
 import com.afi.minby.sendidea.categories.viewholder.AnotherCategoryViewHolder
 import com.afi.minby.sendidea.categories.viewholder.CategoryItemViewHolder
-import com.afi.minby.core.inflate
 
-class CategoriesAdapter(var items: List<Category>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CategoriesAdapter(var items: List<Category>, private var itemCallback: AdapterCallback) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         const val VIEW_HOLDER_ANOTHER_CATEGORY = 0
@@ -17,14 +19,17 @@ class CategoriesAdapter(var items: List<Category>) : RecyclerView.Adapter<Recycl
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            VIEW_HOLDER_ANOTHER_CATEGORY -> AnotherCategoryViewHolder(parent.context.inflate(R.layout.another_category_item))
+            VIEW_HOLDER_ANOTHER_CATEGORY -> AnotherCategoryViewHolder(
+                parent.context.inflate(R.layout.another_category_item),
+                itemCallback
+            )
             VIEW_HOLDER_CATEGORY ->
                 CategoryItemViewHolder(
                     parent.context.inflate(
                         R.layout.category_item,
                         parent,
                         false
-                    )
+                    ), itemCallback
                 )
             else -> throw IllegalArgumentException("No such view type found")
         }

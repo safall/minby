@@ -5,11 +5,13 @@ import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
+import com.afi.minby.home.AdapterCallback
 import com.afi.minby.sendidea.categories.model.CategoriesEnum
 import com.afi.minby.sendidea.categories.model.Category
 import kotlinx.android.synthetic.main.category_item.view.*
 
-class CategoryItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+class CategoryItemViewHolder(val view: View, private val itemCallback: AdapterCallback) :
+    RecyclerView.ViewHolder(view) {
 
     fun bind(item: Category) {
         with(view) {
@@ -21,6 +23,9 @@ class CategoryItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
                     getIconFromDrawable(item.iconId)
                 )
             )
+            setOnClickListener {
+                itemCallback.onItemClicked(item)
+            }
         }
     }
 
