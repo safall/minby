@@ -43,4 +43,7 @@
     <string name="record_instead">Ta opp i stedet</string>
     <string name="next">Neste</string>
     <string name="enter_details">Angi detaljer</string>
+    <string name="summary">Sammendrag</string>
+    <string name="description">Beskrivelse</string>
+    <string name="images">Bilder</string>
 </resources>

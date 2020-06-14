@@ -50,4 +50,7 @@
     <string name="record_instead">Record instead</string>
     <string name="next">Next</string>
     <string name="enter_details">Enter Details</string>
+    <string name="summary">Summary</string>
+    <string name="description">Description</string>
+    <string name="images">Images</string>
 </resources>

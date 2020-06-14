@@ -1,4 +1,4 @@
-package com.afi.minby.enterdetails.viewmodel
+package com.afi.minby.sendidea.enterdetails.viewmodel
 
 import androidx.lifecycle.ViewModel
 

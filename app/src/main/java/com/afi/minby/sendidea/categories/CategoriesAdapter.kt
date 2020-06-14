@@ -1,11 +1,11 @@
-package com.afi.minby.categories
+package com.afi.minby.sendidea.categories
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
-import com.afi.minby.categories.model.Category
-import com.afi.minby.categories.viewholder.AnotherCategoryViewHolder
-import com.afi.minby.categories.viewholder.CategoryItemViewHolder
+import com.afi.minby.sendidea.categories.model.Category
+import com.afi.minby.sendidea.categories.viewholder.AnotherCategoryViewHolder
+import com.afi.minby.sendidea.categories.viewholder.CategoryItemViewHolder
 import com.afi.minby.core.inflate
 
 class CategoriesAdapter(var items: List<Category>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

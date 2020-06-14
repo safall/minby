@@ -1,12 +1,12 @@
-package com.afi.minby.categories.viewholder
+package com.afi.minby.sendidea.categories.viewholder
 
 import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
-import com.afi.minby.categories.model.CategoriesEnum
-import com.afi.minby.categories.model.Category
+import com.afi.minby.sendidea.categories.model.CategoriesEnum
+import com.afi.minby.sendidea.categories.model.Category
 import kotlinx.android.synthetic.main.category_item.view.*
 
 class CategoryItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
