@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
 import com.afi.minby.core.CategoriesItemDecoration
 import com.afi.minby.home.AdapterCallback
@@ -17,33 +16,29 @@ import kotlinx.android.synthetic.main.categories_fragment.*
 
 class CategoriesFragment : Fragment(R.layout.categories_fragment) {
 
-    private lateinit var categoriesAdapter: CategoriesAdapter
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoriesAdapter = CategoriesAdapter(
+        val categoriesAdapter = CategoriesAdapter(
             CategoriesList.getCategories(requireContext()),
             object : AdapterCallback {
                 override fun <T> onItemClicked(item: T) {
-                   NavHostFragment.findNavController(host_fragment).navigate(R.id.categoriesFragmentToEnterDetailsFragment)
+                    NavHostFragment.findNavController(host_fragment)
+                        .navigate(R.id.categoriesFragmentToEnterDetailsFragment)
                 }
 
             })
+
         with(recyclerView) {
             adapter = categoriesAdapter
-            layoutManager = getGridLayoutManager()
             addItemDecoration(CategoriesItemDecoration())
-        }
-    }
-
-    private fun getGridLayoutManager(): RecyclerView.LayoutManager {
-        return GridLayoutManager(context, 2).apply {
-            spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-                override fun getSpanSize(position: Int): Int {
-                    return when (categoriesAdapter.getItemViewType(position)) {
-                        VIEW_HOLDER_ANOTHER_CATEGORY -> 2
-                        VIEW_HOLDER_CATEGORY -> 1
-                        else -> 1
+            layoutManager = GridLayoutManager(context, 2).apply {
+                spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        return when (categoriesAdapter.getItemViewType(position)) {
+                            VIEW_HOLDER_ANOTHER_CATEGORY -> 2
+                            VIEW_HOLDER_CATEGORY -> 1
+                            else -> 1
+                        }
                     }
                 }
             }
