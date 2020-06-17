@@ -6,7 +6,7 @@
     <string name="copied">copied</string>
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="continue_with_google">Continue with Google</string>
-    <string name="your_help">Your idea helps to \n make a difference</string>
+    <string name="your_help">Your idea helps to  make a difference</string>
     <string name="existing_use">Existing use?</string>
     <string name="facebook_app_id">570257243697104</string>
     <string name="fb_login_protocol_scheme">fb570257243697104</string>
@@ -26,7 +26,7 @@
     <string name="settings">settings</string>
     <string name="submit">Submit</string>
     <string name="server_client_id">"359724204371-goaj8d2qbicd9ki23hiqo1vg1ktglukr.apps.googleusercontent.com"</string>
-    <string name="thank_you">Thank you \n very much!</string>
+    <string name="thank_you">Thank you!</string>
     <string name="we_build_city_together">We build the city together</string>
     <string name="select_catagories">Select Categories</string>
     <string name="select_an_image">Select an image</string>
