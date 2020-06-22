@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,19 +19,20 @@
 
     <TextView
         android:id="@+id/minbyText"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginTop="21dp"
-        android:gravity="center"
         android:text="@string/minby"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/circularView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/circularView" />
+
     <TextView
         android:id="@+id/thankYou"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -43,19 +43,23 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minbyText" />
+
     <TextView
         android:id="@+id/yourIdeaText"
+        style="@style/Body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:gravity="center"
         android:text="@string/your_help"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thankYou" />
+
     <TextView
         android:id="@+id/yourScoreText"
+        style="@style/Body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -64,25 +68,27 @@
         android:text="Your have received"
         android:textColor="@color/black"
         android:textSize="14sp"
-        android:textStyle="normal"
-        android:fontFamily="@font/raleway_medium"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourIdeaText" />
+
     <TextView
         android:id="@+id/scoreText"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
+        android:fontFamily="@font/raleway_bold"
         android:gravity="center"
         android:text="+2 points!"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:fontFamily="@font/raleway_bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourScoreText" />
+
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/finishButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
