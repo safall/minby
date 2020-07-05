@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
 
-class HomeMenuAdapter internal constructor(private var itemCallback: AdapterCallback) :
+class HomeMenuAdapter internal constructor(
+    var items: List<HomeMenuItem>,
+    private var itemCallback: AdapterCallback
+) :
     RecyclerView.Adapter<HomeMenuViewHolder>() {
-
-    var items = listOf<HomeMenuItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeMenuViewHolder {
         return HomeMenuViewHolder(

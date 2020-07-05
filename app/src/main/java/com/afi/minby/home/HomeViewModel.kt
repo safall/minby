@@ -24,47 +24,13 @@ class HomeViewModel @ViewModelInject constructor(
             repository.getHomeMenuItems()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ result ->
-                    if (result.isEmpty()) {
-                        isEmpty.postValue(true)
-                    } else {
-                        gethomeMenuItem.postValue(getDummyData())
-                    }
+                .subscribe({ menuItems ->
+                    gethomeMenuItem.postValue(menuItems)
                 }) {
                     showError.postValue(it.message)
-                    gethomeMenuItem.postValue(getDummyData())
+                    gethomeMenuItem.postValue(emptyList())
                 }
         )
-    }
-
-    private fun getDummyData(): List<HomeMenuItem> {
-        return arrayListOf<HomeMenuItem>()
-            .apply {
-                add(
-                    0,
-                    HomeMenuItem(
-                        "Send oss en ide",
-                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        "idea"
-                    )
-                )
-                add(
-                    1,
-                    HomeMenuItem(
-                        "Send oss en vurdering",
-                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        "vurdering"
-                    )
-                )
-                add(
-                    2,
-                    HomeMenuItem(
-                        "Send oss en intervju",
-                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        "intervju"
-                    )
-                )
-            }
     }
 
     override fun onCleared() {
