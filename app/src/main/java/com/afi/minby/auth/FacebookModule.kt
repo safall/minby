@@ -3,10 +3,13 @@ package com.afi.minby.auth
 import com.facebook.CallbackManager
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 
 @Module
-internal class FacebookModule {
+@InstallIn(ApplicationComponent::class)
+object FacebookModule {
 
     @Provides
     @Singleton

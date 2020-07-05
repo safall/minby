@@ -11,9 +11,11 @@ import com.afi.minby.home.AdapterCallback
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.sendidea.categories.model.CategoriesList
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.categories_fragment.*
 
+@AndroidEntryPoint
 class CategoriesFragment : Fragment(R.layout.categories_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,7 +27,6 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
                     NavHostFragment.findNavController(host_fragment)
                         .navigate(R.id.categoriesFragmentToSelectLocationFragment)
                 }
-
             })
 
         with(recyclerView) {

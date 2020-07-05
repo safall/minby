@@ -5,6 +5,8 @@ import com.afi.minby.repository.RemoteService
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -12,7 +14,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
-class NetworkModule {
+@InstallIn(ApplicationComponent::class)
+object NetworkModule {
 
     @Provides
     @Singleton

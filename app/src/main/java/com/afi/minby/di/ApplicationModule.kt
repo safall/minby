@@ -4,17 +4,18 @@ import android.content.Context
 import android.net.ConnectivityManager
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule(private val context: Context) {
-
-    @Provides fun provideApplicationContext(): Context = context
+@InstallIn(ApplicationComponent::class)
+class ApplicationModule {
 
     @Provides
     @Singleton
-    internal fun provideConnectivityManager(): ConnectivityManager {
-        return context
-            .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    internal fun provideConnectivityManager(@ApplicationContext context: MinByApplication): ConnectivityManager {
+        return context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     }
 }

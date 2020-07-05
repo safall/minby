@@ -4,32 +4,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.core.VerticalSpaceDecoration
-import com.afi.minby.di.MinByApplication
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.home_fragment.*
-import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: HomeViewModel by viewModels()
     private lateinit var homeMenuAdapter: HomeMenuAdapter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        MinByApplication.instance.component.inject(this)
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(HomeViewModel::class.java)
         viewModel.addHomeMenuItems()
         observeHomeMenuItems()
     }
@@ -49,14 +40,14 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
     }
 
     private fun observeHomeMenuItems() {
-        viewModel.gethomeMenuItem_.observe(this, Observer {
+        viewModel.gethomeMenuItem_.observe(viewLifecycleOwner, Observer {
             updateItems(it)
         })
 
-        viewModel.isEmpty.observe(this, Observer {
+        viewModel.isEmpty.observe(viewLifecycleOwner, Observer {
         })
 
-        viewModel.showError.observe(this, Observer {
+        viewModel.showError.observe(viewLifecycleOwner, Observer {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
             println("show error message $it")
         })

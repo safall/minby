@@ -1,12 +1,13 @@
 package com.afi.minby.auth.launcher
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit
 
-class LauncherViewModel : ViewModel() {
+class LauncherViewModel @ViewModelInject constructor() : ViewModel() {
 
     var loadHomePage = MutableLiveData<Unit>()
 

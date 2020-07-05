@@ -1,20 +1,21 @@
 package com.afi.minby.auth
 
 import android.app.Activity
+import android.content.Context
 import com.afi.minby.R
-import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class GoogleAuthUseCase @Inject constructor() {
+class GoogleAuthUseCase @Inject constructor(@ApplicationContext private val context: Context) {
 
-    val googleSignInOptions by lazy {
+    private val googleSignInOptions: GoogleSignInOptions by lazy {
         GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(MinByApplication.instance.getString(R.string.server_client_id))
+            .requestIdToken(context.getString(R.string.server_client_id))
             .requestEmail()
             .build()
     }

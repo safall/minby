@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.sendidea.categories.model.CategoriesList
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.summary_details_fragment.*
 
+@AndroidEntryPoint
 class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
