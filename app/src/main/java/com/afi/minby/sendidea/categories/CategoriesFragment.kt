@@ -25,7 +25,7 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
             object : AdapterCallback {
                 override fun <T> onItemClicked(item: T) {
                     NavHostFragment.findNavController(host_fragment)
-                        .navigate(R.id.categoriesFragmentToEnterDetailsFragment)
+                        .navigate(R.id.categoriesFragmentToSelectLocationFragment)
                 }
             })
 

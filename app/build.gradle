@@ -59,6 +59,7 @@ dependencies {
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
 
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
     kapt 'com.google.dagger:dagger-compiler:2.25.2'
     implementation 'com.google.code.gson:gson:2.8.5'

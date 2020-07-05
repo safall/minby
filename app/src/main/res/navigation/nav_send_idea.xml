@@ -11,7 +11,17 @@
         tools:layout="@layout/categories_fragment">
 
         <action
-            android:id="@+id/categoriesFragmentToEnterDetailsFragment"
+            android:id="@+id/categoriesFragmentToSelectLocationFragment"
+            app:destination="@id/selectLocationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectLocationFragment"
+        android:name="com.afi.minby.sendidea.location.EnterLocationFragment"
+        tools:layout="@layout/enter_location_fragment">
+
+        <action
+            android:id="@+id/enterLocationFragmentToEnterDetailsFragment"
             app:destination="@id/enterDetailsFragment" />
     </fragment>
 
