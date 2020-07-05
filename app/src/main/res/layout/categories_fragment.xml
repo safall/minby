@@ -27,9 +27,8 @@
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_back"
         android:elevation="10dp"
-        android:src="@drawable/ic_chevron_left"
+        android:src="@drawable/ic_back_arrow"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
