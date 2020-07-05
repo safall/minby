@@ -10,9 +10,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.sendidea.enterdetails.viewmodel.EnterDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_details_fragment.*
 
+@AndroidEntryPoint
 class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
 
     companion object {

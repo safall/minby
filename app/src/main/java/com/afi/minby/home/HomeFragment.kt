@@ -9,9 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.core.VerticalSpaceDecoration
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.home_fragment.*
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
     private val viewModel: HomeViewModel by viewModels()
