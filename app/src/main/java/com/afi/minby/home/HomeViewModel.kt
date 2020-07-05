@@ -1,14 +1,14 @@
 package com.afi.minby.home
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.afi.minby.repository.RemoteRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(
+class HomeViewModel @ViewModelInject constructor(
     private val repository: RemoteRepository
 ) : ViewModel() {
 

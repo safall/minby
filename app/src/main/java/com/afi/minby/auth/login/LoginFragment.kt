@@ -6,31 +6,21 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
-import com.afi.minby.di.MinByApplication
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.fragment_login.*
-import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private lateinit var viewModel: LoginViewModel
+    private val viewModel: LoginViewModel by viewModels()
 
     private lateinit var client: GoogleSignInClient
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        MinByApplication.instance.component.inject(this)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -63,21 +53,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel::class.java)
-
-        viewModel.fbuseCaseLiveData.observe(this, Observer {
+        viewModel.fbuseCaseLiveData.observe(viewLifecycleOwner, Observer {
             it.authenticate(this)
         })
 
-        viewModel.googleUseCaseLiveData.observe(this, Observer {
+        viewModel.googleUseCaseLiveData.observe(viewLifecycleOwner, Observer {
             client = it.getGoogleSignInClient(requireActivity())
             client.silentSignIn().addOnCompleteListener {
                 viewModel.checkForLogin(it, true)
             }
         })
 
-        viewModel.authenticationSuccessful.observe(this, Observer {
+        viewModel.authenticationSuccessful.observe(viewLifecycleOwner, Observer {
             if (it) {
                 NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
             } else {
@@ -86,7 +73,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             }
         })
 
-        viewModel.silentAuthenticationFailed.observe(this, Observer {
+        viewModel.silentAuthenticationFailed.observe(viewLifecycleOwner, Observer {
             if (it == true) {
                 startActivityForResult(client.signInIntent, 200)
             }
