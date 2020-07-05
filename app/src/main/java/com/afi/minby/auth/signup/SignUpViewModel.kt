@@ -2,6 +2,7 @@ package com.afi.minby.auth.signup
 
 import android.content.Intent
 import android.util.Log
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.afi.minby.R
@@ -17,9 +18,8 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 
-class SignUpViewModel @Inject constructor(
+class SignUpViewModel @ViewModelInject constructor(
     private val facebookAuthUseCase: FacebookAuthUseCase,
     private val googleAuthUseCase: GoogleAuthUseCase,
     private val repository: RemoteRepository

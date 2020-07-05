@@ -25,7 +25,6 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
                     NavHostFragment.findNavController(host_fragment)
                         .navigate(R.id.categoriesFragmentToEnterDetailsFragment)
                 }
-
             })
 
         with(recyclerView) {
