@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+            <solid android:color="@color/colorPrimaryDark" />
+            <size
+                android:width="453dp"
+                android:height="453dp" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_trophy"
+        android:top="240dp"
+        android:right="242dp"
+        android:left="100dp"
+        android:bottom="68dp"/>
+</layer-list>
