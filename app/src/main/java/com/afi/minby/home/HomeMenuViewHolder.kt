@@ -1,7 +1,11 @@
 package com.afi.minby.home
 
+import android.annotation.SuppressLint
 import android.view.View
+import androidx.annotation.DrawableRes
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.afi.minby.R
 import kotlinx.android.synthetic.main.home_menu_item.view.*
 
 class HomeMenuViewHolder(val view: View, private val itemCallback: AdapterCallback) :
@@ -14,6 +18,7 @@ class HomeMenuViewHolder(val view: View, private val itemCallback: AdapterCallba
 
     fun bind(items: HomeMenuItem) {
         data = items
+        view.icon.setImageDrawable(ContextCompat.getDrawable(view.context, items.iconID))
         view.title.text = items.title
         view.subtitle.text = items.desc
         itemView.setOnClickListener(onItemSelected)
