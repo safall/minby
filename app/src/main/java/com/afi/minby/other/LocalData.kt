@@ -1,5 +1,6 @@
 package com.afi.minby.other
 
+import com.afi.minby.R
 import com.afi.minby.home.HomeMenuItem
 
 object LocalData {
@@ -11,7 +12,7 @@ object LocalData {
                     HomeMenuItem(
                         "Send oss en ide",
                         "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        "idea"
+                        R.drawable.ic_idea
                     )
                 )
                 add(
@@ -19,7 +20,7 @@ object LocalData {
                     HomeMenuItem(
                         "Send oss en vurdering",
                         "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        "vurdering"
+                        R.drawable.ic_interview
                     )
                 )
                 add(
@@ -27,7 +28,7 @@ object LocalData {
                     HomeMenuItem(
                         "Send oss en intervju",
                         "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        "intervju"
+                        R.drawable.ic_interview
                     )
                 )
             }

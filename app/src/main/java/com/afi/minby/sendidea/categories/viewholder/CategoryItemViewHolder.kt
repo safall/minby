@@ -33,11 +33,11 @@ class CategoryItemViewHolder(val view: View, private val itemCallback: AdapterCa
     private fun getIconFromDrawable(categoriesEnum: CategoriesEnum): Int {
         return when (categoriesEnum) {
             CategoriesEnum.NATURE -> R.drawable.ic_nature
-            CategoriesEnum.TECHNOLOGY -> R.drawable.ic_smartphone
+            CategoriesEnum.TECHNOLOGY -> R.drawable.ic_technology
             CategoriesEnum.BUILDING -> R.drawable.ic_city
             CategoriesEnum.SOCIAL -> R.drawable.ic_social
             CategoriesEnum.ACTIVITIES -> R.drawable.ic_activities
-            CategoriesEnum.ORGANISATION -> R.drawable.ic_organisation
+            CategoriesEnum.ORGANISATION -> R.drawable.ic_organization
             else -> 0
         }
     }
