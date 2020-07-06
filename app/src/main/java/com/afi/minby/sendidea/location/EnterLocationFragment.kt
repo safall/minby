@@ -35,16 +35,12 @@ class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapR
         with(googleMap) {
             animateCamera(CameraUpdateFactory.newLatLngZoom(osloLatLng, 13f))
             setOnMapClickListener {
-                val markerOptions = MarkerOptions().apply {
+                clear()
+                animateCamera(CameraUpdateFactory.newLatLngZoom(it, 13f))
+                addMarker(MarkerOptions().apply {
                     position(it)
-                    title(it.latitude.toString() + " : " + it.longitude)
-                }
-
-                apply {
-                    clear()
-                    animateCamera(CameraUpdateFactory.newLatLngZoom(it, 13f))
-                    addMarker(markerOptions)
-                }
+                    title(it.latitude.toString() + " : " + it.longitude.toString())
+                })
             }
         }
     }
