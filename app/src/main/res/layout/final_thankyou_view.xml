@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="81dp"
-        android:src="@drawable/bg_circle_home"
+        android:src="@drawable/ic_reward"
         android:translationX="81dp"
         android:translationY="-161dp"
         app:layout_constraintStart_toStartOf="parent"

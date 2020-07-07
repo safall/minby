@@ -20,6 +20,11 @@
         android:name="com.afi.minby.home.feed.FeedFragment"
         tools:layout="@layout/fragment_feed" />
 
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.afi.minby.profile.ProfileFragment"
+        tools:layout="@layout/profile_fragment" />
+
     <activity
         android:id="@+id/sendIdeaActivity"
         android:name="com.afi.minby.sendidea.SendIdeaActivity"

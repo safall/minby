@@ -53,9 +53,9 @@
         android:id="@+id/circularView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bg_circle_home"
-        android:translationX="-135dp"
-        android:translationY="450dp"
+        android:src="@drawable/ic_splash"
+        android:translationX="-117dp"
+        android:translationY="298dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

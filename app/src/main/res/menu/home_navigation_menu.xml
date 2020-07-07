@@ -3,15 +3,22 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_audiotrack_dark"
-        android:title="@string/home" />
-
+        android:icon="@drawable/ic_mail"
+        android:title="@string/message" />
     <item
         android:id="@+id/feedFragment"
-        android:icon="@drawable/ic_audiotrack_light"
+        android:icon="@drawable/ic_home"
         android:title="@string/feed" />
     <item
-        android:id="@+id/issueFragment"
-        android:icon="@drawable/ic_audiotrack_light"
-        android:title="@string/message" />
+        android:id="@+id/enterLocationFragment"
+        android:icon="@drawable/ic_location"
+        android:title="@string/categories" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_user"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
 </menu>
