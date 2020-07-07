@@ -10,9 +10,13 @@
         android:name="com.afi.minby.home.HomeFragment"
         tools:layout="@layout/home_fragment">
 
-        <action
-            android:id="@+id/homeFragmentToSendIdeaActivity"
-            app:destination="@id/categoriesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.afi.minby.profile.ProfileFragment"
+        tools:layout="@layout/profile_fragment">
+
     </fragment>
 
     <activity
