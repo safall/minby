@@ -12,8 +12,13 @@
 
         <action
             android:id="@+id/homeFragmentToSendIdeaActivity"
-            app:destination="@id/categoriesFragment" />
+            app:destination="@id/sendIdeaActivity" />
     </fragment>
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.afi.minby.home.feed.FeedFragment"
+        tools:layout="@layout/fragment_feed" />
 
     <activity
         android:id="@+id/sendIdeaActivity"

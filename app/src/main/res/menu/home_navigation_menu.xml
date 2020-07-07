@@ -7,9 +7,9 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/categoriesFragment"
+        android:id="@+id/feedFragment"
         android:icon="@drawable/ic_audiotrack_light"
-        android:title="@string/categories" />
+        android:title="@string/feed" />
     <item
         android:id="@+id/issueFragment"
         android:icon="@drawable/ic_audiotrack_light"
