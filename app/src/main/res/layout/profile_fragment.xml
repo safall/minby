@@ -24,24 +24,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:gravity="center"
-        android:hint="Profile"
         android:text="@string/profile"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/profileImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="137dp"
+        android:layout_height="137dp"
         android:layout_marginTop="44dp"
-        android:src="@drawable/ic_profile"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileText" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileText"
+        tools:src="@drawable/ic_profile" />
 
     <TextView
         android:id="@+id/userNameText"
@@ -50,10 +49,10 @@
         android:layout_marginTop="30dp"
         android:text="Safal Kumar Ghimire"
         android:textColor="@color/black"
-        android:textSize="32sp"
+        android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
     <TextView
@@ -63,44 +62,43 @@
         android:layout_marginTop="9dp"
         android:text="safalkumarghimire@gmail.com"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userNameText" />
 
     <TextView
-        android:id="@+id/userLocation"
+        android:id="@+id/userAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Oslo, Norway"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail"
+        tools:text="Oslo, Norway" />
 
     <Button
         android:id="@+id/editProfile"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="130dp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
         android:layout_marginTop="23dp"
-        android:layout_marginEnd="130dp"
         android:background="@drawable/edit_profile_button_background"
         android:text="@string/edit_profile"
         android:textColor="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userLocation" />
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAddress" />
 
     <View
-        android:id="@+id/horizentalLine"
+        android:id="@+id/horizontalLine"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#EDEDED"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
+        android:background="#EDEDED"
         app:layout_constraintTop_toBottomOf="@+id/editProfile" />
 
     <TextView
@@ -111,11 +109,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="117dp"
         android:gravity="center"
-        android:text="Total Min By points"
+        android:text="@string/total_score_count"
         android:textColor="@color/hintColor"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizentalLine" />
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalLine" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,10 +122,10 @@
         android:layout_marginTop="10dp"
         android:text="84"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="32sp"
+        android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalMinbyText" />
 
     <ImageView
