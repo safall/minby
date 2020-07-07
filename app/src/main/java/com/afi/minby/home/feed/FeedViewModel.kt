@@ -23,7 +23,7 @@ class FeedViewModel @ViewModelInject constructor(private val respository: Remote
             .subscribe({
                 feedItems.postValue(it)
             }, {
-                TODO("Error handling to be done")
+                feedItems.postValue(emptyList())
             })
     }
 
