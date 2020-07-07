@@ -1,6 +1,6 @@
 package com.afi.minby.repository
 
-import com.afi.minby.home.HomeMenuItem
+import com.afi.minby.home.homemenu.HomeMenuItem
 import com.afi.minby.model.User
 import com.afi.minby.other.LocalData
 import io.reactivex.Single

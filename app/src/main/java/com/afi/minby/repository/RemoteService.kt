@@ -1,6 +1,6 @@
 package com.afi.minby.repository
 
-import com.afi.minby.home.HomeMenuItem
+import com.afi.minby.home.homemenu.HomeMenuItem
 import com.afi.minby.model.User
 import io.reactivex.Single
 import retrofit2.http.Field

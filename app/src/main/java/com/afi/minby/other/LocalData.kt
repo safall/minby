@@ -1,6 +1,6 @@
 package com.afi.minby.other
 
-import com.afi.minby.home.HomeMenuItem
+import com.afi.minby.home.homemenu.HomeMenuItem
 
 object LocalData {
     fun getDummyData(): List<HomeMenuItem> {

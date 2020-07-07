@@ -1,4 +1,4 @@
-package com.afi.minby.home
+package com.afi.minby.home.homemenu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -26,12 +26,14 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
         viewModel.gethomeMenuItem_.observe(viewLifecycleOwner, Observer {
             with(recyclerView) {
                 addItemDecoration(VerticalSpaceDecoration())
-                adapter = HomeMenuAdapter(it, object : AdapterCallback {
-                    override fun <T> onItemClicked(item: T) {
-                        NavHostFragment.findNavController(hostFragment)
-                            .navigate(R.id.sendIdeaActivity)
-                    }
-                })
+                adapter = HomeMenuAdapter(
+                    it,
+                    object : AdapterCallback {
+                        override fun <T> onItemClicked(item: T) {
+                            NavHostFragment.findNavController(hostFragment)
+                                .navigate(R.id.sendIdeaActivity)
+                        }
+                    })
             }
         })
     }

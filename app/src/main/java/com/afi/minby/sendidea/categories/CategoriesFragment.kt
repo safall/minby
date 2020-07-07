@@ -7,7 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.afi.minby.R
 import com.afi.minby.core.CategoriesItemDecoration
-import com.afi.minby.home.AdapterCallback
+import com.afi.minby.home.homemenu.AdapterCallback
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.sendidea.categories.model.CategoriesList
