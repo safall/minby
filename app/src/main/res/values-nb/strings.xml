@@ -46,4 +46,6 @@
     <string name="summary">Sammendrag</string>
     <string name="description">Beskrivelse</string>
     <string name="images">Bilder</string>
+    <string name="feed">Innlegg</string>
+
 </resources>
