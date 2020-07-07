@@ -10,9 +10,24 @@
         android:name="com.afi.minby.home.HomeFragment"
         tools:layout="@layout/home_fragment">
 
-        <action
-            android:id="@+id/homeFragmentToSendIdeaActivity"
-            app:destination="@id/categoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/issueFragment"
+        android:name="com.afi.minby.sendidea.enterdetails.EnterDetailsFragment"
+        tools:layout="@layout/enter_details_fragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/enterLocationFragment"
+        android:name="com.afi.minby.sendidea.location.EnterLocationFragment"
+        tools:layout="@layout/enter_location_fragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.afi.minby.profile.ProfileFragment"
+        tools:layout="@layout/profile_fragment">
+
     </fragment>
 
     <activity

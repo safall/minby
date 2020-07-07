@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_mail"
         android:title="@string/message" />
     <item
-        android:id="@+id/categoriesFragment"
+        android:id="@+id/enterLocationFragment"
         android:icon="@drawable/ic_location"
         android:title="@string/categories" />
     <item
