@@ -7,17 +7,23 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.afi.minby.home.HomeFragment"
+        android:name="com.afi.minby.home.homemenu.HomeFragment"
         tools:layout="@layout/home_fragment">
 
+        <action
+            android:id="@+id/homeFragmentToSendIdeaActivity"
+            app:destination="@id/sendIdeaActivity" />
     </fragment>
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.afi.minby.home.feed.FeedFragment"
+        tools:layout="@layout/fragment_feed" />
 
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.afi.minby.profile.ProfileFragment"
-        tools:layout="@layout/profile_fragment">
-
-    </fragment>
+        tools:layout="@layout/profile_fragment" />
 
     <activity
         android:id="@+id/sendIdeaActivity"

@@ -1,4 +1,4 @@
-package com.afi.minby.home
+package com.afi.minby.home.homemenu
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData

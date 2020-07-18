@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
-import com.afi.minby.home.AdapterCallback
+import com.afi.minby.home.homemenu.AdapterCallback
 import com.afi.minby.sendidea.categories.model.CategoriesEnum
 import com.afi.minby.sendidea.categories.model.Category
 import kotlinx.android.synthetic.main.category_item.view.*

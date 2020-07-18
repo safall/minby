@@ -1,6 +1,7 @@
 package com.afi.minby.repository
 
-import com.afi.minby.home.HomeMenuItem
+import com.afi.minby.home.homemenu.HomeMenuItem
+import com.afi.minby.model.Feed
 import com.afi.minby.model.User
 import com.afi.minby.other.LocalData
 import io.reactivex.Single
@@ -18,5 +19,9 @@ class RemoteRepository @Inject constructor(private val remoteService: RemoteServ
 
     fun getHomeMenuItems(): Single<List<HomeMenuItem>> {
         return Single.just(LocalData.getDummyData())
+    }
+
+    fun getFeed(): Single<List<Feed>> {
+        return remoteService.getFeed()
     }
 }

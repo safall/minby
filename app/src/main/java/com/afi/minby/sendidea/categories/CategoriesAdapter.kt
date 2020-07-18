@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
 import com.afi.minby.core.inflate
-import com.afi.minby.home.AdapterCallback
+import com.afi.minby.home.homemenu.AdapterCallback
 import com.afi.minby.sendidea.categories.model.Category
 import com.afi.minby.sendidea.categories.viewholder.AnotherCategoryViewHolder
 import com.afi.minby.sendidea.categories.viewholder.CategoryItemViewHolder

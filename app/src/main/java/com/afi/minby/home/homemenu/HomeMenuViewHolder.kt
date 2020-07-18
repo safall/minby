@@ -1,4 +1,4 @@
-package com.afi.minby.home
+package com.afi.minby.home.homemenu
 
 import android.annotation.SuppressLint
 import android.view.View
