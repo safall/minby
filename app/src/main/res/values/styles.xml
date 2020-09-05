@@ -20,6 +20,12 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="ToolbarTitle" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
     <style name="SubTitle" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/raleway_medium</item>
         <item name="android:textColor">@color/form_text_color</item>
