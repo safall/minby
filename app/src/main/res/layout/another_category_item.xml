@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/anotherButton"
+    style="@style/BorderedButtonStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/another_category_background"
-    android:text="@string/another"
-    android:textColor="@color/colorPrimaryDark" />
+    android:text="@string/another" />

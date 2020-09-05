@@ -17,7 +17,6 @@
     <color name="yellow">#FFDC00</color>
     <color name="app_background">#FAFAFA</color>
 
-    <color name="social">#ED7014</color>
     <color name="building_and_construction">#5E61F2</color>
     <color name="nature_and_green">#15B76C</color>
     <color name="activities_and_training">#EC5536</color>
@@ -25,5 +24,6 @@
     <color name="organisation">#A151F2</color>
     <color name="edit_text_background_color">#EDEDED</color>
     <color name="form_text_color">#666666</color>
+    <color name="social">#ED7014</color>
 </resources>
 
