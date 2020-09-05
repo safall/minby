@@ -11,9 +11,9 @@
         android:id="@+id/circularView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/bg_circle_home"
         android:translationX="-135dp"
         android:translationY="-150dp"
-        android:src="@drawable/bg_circle_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/subtitle"
-        style="@style/Title"
+        style="@style/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -46,14 +46,13 @@
 
     <TextView
         android:id="@+id/body"
-        style="@style/Body"
+        style="@style/SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="@string/what_do_you_want_to_do"
         android:textColor="@color/white"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtitle" />
 
@@ -63,9 +62,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="25dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/body"
-        app:layout_constraintBottom_toBottomOf="parent"
         tools:itemCount="3"
         tools:listitem="@layout/home_menu_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
