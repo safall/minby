@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@drawable/login_button_background"
+        android:background="@drawable/standard_button_background"
         android:text="@string/next"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -11,10 +11,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import kotlinx.android.synthetic.main.activity_launcher.*
-import kotlinx.android.synthetic.main.login_fragment.registerButton
-import kotlinx.android.synthetic.main.sign_up_fragment.*
+import kotlinx.android.synthetic.main.fragment_login.*
 
-class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
+class SignUpFragment : Fragment(R.layout.fragment_login) {
 
     private val viewModel: SignUpViewModel by viewModels()
 
@@ -22,19 +21,19 @@ class SignUpFragment : Fragment(R.layout.sign_up_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        registerButton.setOnClickListener {
+        loginButton.setOnClickListener {
             viewModel.attemptRegister(
-                emailSignup.text.toString(),
-                passwordSignup.text.toString(),
-                rePasswordSignup.text.toString()
+                email.text.toString(),
+                password.text.toString(),
+                password.text.toString()
             )
         }
 
-        facebookSignup.setOnClickListener {
+        facebook.setOnClickListener {
             viewModel.initFBRegister()
         }
 
-        googleSignup.setOnClickListener {
+        google.setOnClickListener {
             viewModel.initGoogleRegister()
         }
     }
