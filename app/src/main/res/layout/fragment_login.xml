@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/login"
+            android:id="@+id/containerHeading"
             style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,14 +95,14 @@
             android:layout_marginBottom="15dp"
             android:hint="@string/confirm_password"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@id/loginButton"
+            app:layout_constraintBottom_toTopOf="@id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/confirm_password"
-            tools:visibility="visible" />
+            tools:visibility="gone" />
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/button"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,7 +111,6 @@
             android:layout_marginBottom="15dp"
             android:text="@string/logg_in"
             app:layout_constraintBottom_toTopOf="@id/dontHaveUser"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -119,11 +118,12 @@
             style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginBottom="15dp"
             android:text="@string/dont_have_use"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/loginOrSignUpWith"
+            app:layout_constraintEnd_toStartOf="@+id/register"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -131,14 +131,14 @@
             style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="15dp"
             android:text="@string/register"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/loginOrSignUpWith"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dontHaveUser" />
 
         <TextView
             android:id="@+id/loginOrSignUpWith"
@@ -161,14 +161,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:drawableStart="@drawable/com_facebook_favicon_blue"
             android:gravity="center"
             android:padding="14dp"
             android:text="@string/facebook"
             android:textColor="#707373"
             android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/terms"
             app:layout_constraintEnd_toStartOf="@+id/google"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent" />
@@ -180,14 +180,39 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:drawableStart="@drawable/com_facebook_favicon_blue"
             android:gravity="center"
             android:padding="14dp"
             android:text="Google"
             android:textColor="#707373"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/privacy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/facebook" />
+
+        <TextView
+            android:id="@+id/terms"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/terms_and_conditions"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/privacy"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/privacy_policy"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

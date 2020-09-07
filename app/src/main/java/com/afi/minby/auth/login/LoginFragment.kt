@@ -32,7 +32,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             viewModel.initGoogleLogin()
         }
 
-        loginButton.setOnClickListener {
+        button.setOnClickListener {
             viewModel.attemptLogin(password.text.toString(), password.text.toString())
         }
 
@@ -41,6 +41,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             circularView.startAnimation(animZoomIn)
             confirmPassword.visibility = View.VISIBLE
             backIcon.visibility = View.VISIBLE
+            button.text = requireContext().getText(R.string.sign_up)
+            dontHaveUser.text = requireContext().getText(R.string.already_registered)
+            register.text = requireContext().getText(R.string.logg_in)
+            containerHeading.text = requireContext().getText(R.string.sign_up)
         }
 
         backIcon.setOnClickListener {
@@ -48,6 +52,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             circularView.startAnimation(animZoomOut)
             backIcon.visibility = View.GONE
             confirmPassword.visibility = View.GONE
+            button.text = requireContext().getText(R.string.logg_in)
+            dontHaveUser.text = requireContext().getText(R.string.dont_have_use)
+            register.text = requireContext().getText(R.string.register)
+            containerHeading.text = requireContext().getText(R.string.logg_in)
         }
     }
 

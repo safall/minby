@@ -23,23 +23,10 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.afi.minby.auth.login.LoginFragment"
-        tools:layout="@layout/login_fragment">
+        tools:layout="@layout/fragment_login">
 
         <action
             android:id="@+id/loginToHomeActivity"
-            app:destination="@id/homeActivity" />
-
-        <action
-            android:id="@+id/loginTosignUpFragment"
-            app:destination="@id/signUpFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.afi.minby.auth.signup.SignUpFragment"
-        tools:layout="@layout/sign_up_fragment">
-        <action
-            android:id="@+id/signupToHomeActivity"
             app:destination="@id/homeActivity" />
     </fragment>
 
