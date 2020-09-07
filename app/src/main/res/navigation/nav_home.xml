@@ -35,6 +35,11 @@
         android:name="com.afi.minby.profile.EditProfileDialog"
         tools:layout="@layout/dialog_edit_profile" />
 
+    <dialog
+        android:id="@+id/changePasswordDialog"
+        android:name="com.afi.minby.settings.ChangePasswordDialog"
+        tools:layout="@layout/dialog_change_password" />
+
     <activity
         android:id="@+id/sendIdeaActivity"
         android:name="com.afi.minby.sendidea.SendIdeaActivity"
