@@ -9,12 +9,10 @@
 
     <TextView
         android:layout_width="wrap_content"
+        style="@style/ToolbarTitle"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/profile"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,12 +41,11 @@
 
     <TextView
         android:id="@+id/userName"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:textColor="@color/black"
         android:textSize="25sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileImage"
@@ -56,10 +53,10 @@
 
     <TextView
         android:id="@+id/userEmail"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
-        android:textColor="#3F4040"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,11 +65,12 @@
 
     <TextView
         android:id="@+id/userAddress"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userEmail"
@@ -101,6 +99,7 @@
 
     <TextView
         android:id="@+id/totalMinbyText"
+        style="@style/SubTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="117dp"
@@ -109,19 +108,18 @@
         android:gravity="center"
         android:text="@string/total_score_count"
         android:textColor="#737070"
-        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalLine" />
 
     <TextView
         android:id="@+id/points"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="25sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalMinbyText"

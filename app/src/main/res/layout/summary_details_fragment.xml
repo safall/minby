@@ -45,9 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
-        android:textColor="#3F4040"
         android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/location"
         app:layout_constraintLeft_toRightOf="@+id/userImage"
         app:layout_constraintTop_toBottomOf="@id/backIcon"
@@ -96,15 +94,12 @@
 
     <TextView
         android:id="@+id/descHeader"
-        style="@style/Body"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/description"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userImage" />
 
@@ -123,15 +118,12 @@
 
     <TextView
         android:id="@+id/images"
-        style="@style/Body"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/images"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 

@@ -17,7 +17,6 @@
         android:layout_toStartOf="@+id/textRight"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="#3F4040"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

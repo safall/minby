@@ -39,8 +39,6 @@
         android:layout_marginTop="8dp"
         android:text="@string/good_day"
         android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
@@ -53,6 +51,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/what_do_you_want_to_do"
         android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtitle" />
 

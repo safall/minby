@@ -8,12 +8,12 @@
 
     <ImageView
         android:id="@+id/circularView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_marginStart="81dp"
         android:src="@drawable/ic_reward"
-        android:translationX="81dp"
-        android:translationY="-161dp"
+        android:translationX="91dp"
+        android:translationY="-141dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,67 +23,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="21dp"
         android:text="@string/minby"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circularView" />
 
     <TextView
         android:id="@+id/thankYou"
-        style="@style/Title"
+        style="@style/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:gravity="center_horizontal"
         android:text="@string/thank_you"
-        android:textColor="@color/black"
         android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minbyText" />
 
     <TextView
         android:id="@+id/yourIdeaText"
-        style="@style/Body"
+        style="@style/SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:gravity="center"
         android:text="@string/your_help"
-        android:textColor="@color/black"
-        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thankYou" />
 
     <TextView
         android:id="@+id/yourScoreText"
-        style="@style/Body"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Your have received"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        android:text="@string/your_have_received"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourIdeaText" />
 
     <TextView
         android:id="@+id/scoreText"
-        style="@style/Title"
+        style="@style/Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
-        android:fontFamily="@font/raleway_bold"
         android:gravity="center"
         android:text="+2 points!"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourScoreText" />
 

@@ -125,7 +125,7 @@
 
     <TextView
         android:id="@+id/maxLimit"
-        style="@style/Body"
+        style="@style/SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -134,12 +134,11 @@
         android:text="@string/max_500_characters"
         android:textColor="@color/form_text_color"
         android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/description"
         app:layout_constraintTop_toBottomOf="@+id/dividerView" />
 
     <TextView
-        style="@style/Body"
+        style="@style/SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -149,7 +148,6 @@
         android:text="@string/record_instead"
         android:textColor="@color/form_text_color"
         android:textSize="12sp"
-        android:textStyle="bold"
         app:layout_constraintRight_toLeftOf="@id/voiceIcon"
         app:layout_constraintTop_toBottomOf="@+id/dividerView" />
 
