@@ -30,6 +30,11 @@
         android:name="com.afi.minby.settings.SettingsFragment"
         tools:layout="@layout/fragment_settings" />
 
+    <dialog
+        android:id="@+id/editProfileDialog"
+        android:name="com.afi.minby.profile.EditProfileDialog"
+        tools:layout="@layout/dialog_edit_profile" />
+
     <activity
         android:id="@+id/sendIdeaActivity"
         android:name="com.afi.minby.sendidea.SendIdeaActivity"
