@@ -6,9 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.afi.minby.R
-import kotlinx.android.synthetic.main.dialog_change_password.*
+import com.afi.minby.core.getDimensionPixelSize
+import com.afi.minby.settings.SettingsItemDecoration
+import com.afi.minby.settings.subpage.model.PrivacyList
+import kotlinx.android.synthetic.main.dialog_change_password.backIcon
+import kotlinx.android.synthetic.main.fragment_settings.*
 
-class PrivacyPolicyDialog: DialogFragment() {
+class PrivacyPolicyDialog : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +30,9 @@ class PrivacyPolicyDialog: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backIcon.setOnClickListener { dismiss() }
+        with(recyclerView) {
+            adapter = PrivacyAdapter(PrivacyList.getItems())
+            addItemDecoration(SettingsItemDecoration(context.getDimensionPixelSize(R.dimen.settings_item_spacing)))
+        }
     }
 }
