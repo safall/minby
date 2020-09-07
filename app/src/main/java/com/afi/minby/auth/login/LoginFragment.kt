@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
+import com.afi.minby.auth.ScreenState
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_launcher.*
@@ -21,6 +22,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private val viewModel: LoginViewModel by viewModels()
 
     private lateinit var client: GoogleSignInClient
+
+    private var screenState: ScreenState = ScreenState.LOGIN
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,26 +40,33 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         register.setOnClickListener {
-            val animZoomIn = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
-            circularView.startAnimation(animZoomIn)
-            confirmPassword.visibility = View.VISIBLE
-            backIcon.visibility = View.VISIBLE
-            button.text = requireContext().getText(R.string.sign_up)
-            dontHaveUser.text = requireContext().getText(R.string.already_registered)
-            register.text = requireContext().getText(R.string.logg_in)
-            containerHeading.text = requireContext().getText(R.string.sign_up)
+            when (screenState) {
+                ScreenState.LOGIN -> setRegisterState()
+                ScreenState.SIGNUP -> setLoginState()
+            }
         }
+    }
 
-        backIcon.setOnClickListener {
-            val animZoomOut = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
-            circularView.startAnimation(animZoomOut)
-            backIcon.visibility = View.GONE
-            confirmPassword.visibility = View.GONE
-            button.text = requireContext().getText(R.string.logg_in)
-            dontHaveUser.text = requireContext().getText(R.string.dont_have_use)
-            register.text = requireContext().getText(R.string.register)
-            containerHeading.text = requireContext().getText(R.string.logg_in)
-        }
+    private fun setRegisterState() {
+        screenState = ScreenState.SIGNUP
+        val animZoomIn = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
+        circularView.startAnimation(animZoomIn)
+        confirmPassword.visibility = View.VISIBLE
+        button.text = requireContext().getText(R.string.sign_up)
+        dontHaveUser.text = requireContext().getText(R.string.already_registered)
+        register.text = requireContext().getText(R.string.logg_in)
+        containerHeading.text = requireContext().getText(R.string.sign_up)
+    }
+
+    private fun setLoginState() {
+        screenState = ScreenState.LOGIN
+        val animZoomOut = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
+        circularView.startAnimation(animZoomOut)
+        confirmPassword.visibility = View.GONE
+        button.text = requireContext().getText(R.string.logg_in)
+        dontHaveUser.text = requireContext().getText(R.string.dont_have_use)
+        register.text = requireContext().getText(R.string.register)
+        containerHeading.text = requireContext().getText(R.string.logg_in)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
