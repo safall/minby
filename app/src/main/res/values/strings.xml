@@ -60,4 +60,11 @@
     <string name="total_score_count">Total Min By points</string>
     <string name="feed">Feed</string>
     <string name="facebook">Facebook</string>
+    <string name="fullname">Full name</string>
+    <string name="user_address">User Address</string>
+    <string name="save">Save</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="push_notification">Push Notification</string>
 </resources>
