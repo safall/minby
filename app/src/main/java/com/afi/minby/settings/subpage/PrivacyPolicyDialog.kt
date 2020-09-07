@@ -1,4 +1,4 @@
-package com.afi.minby.settings
+package com.afi.minby.settings.subpage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment
 import com.afi.minby.R
 import kotlinx.android.synthetic.main.dialog_change_password.*
 
-class ChangePasswordDialog : DialogFragment() {
+class PrivacyPolicyDialog: DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +20,7 @@ class ChangePasswordDialog : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.dialog_change_password, container, false)
+        return inflater.inflate(R.layout.dialog_privacy, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

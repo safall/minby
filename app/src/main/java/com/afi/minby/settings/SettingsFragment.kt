@@ -20,6 +20,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
                 override fun <T> onItemClicked(item: T) {
                     when ((item as SettingsItem).type) {
                         SettingsItemType.SETTINGS_ITEM_CHANGE_PASSWORD -> navigateTo(R.id.changePasswordDialog)
+                        SettingsItemType.SETTINGS_ITEM_PRIVACY -> navigateTo(R.id.privacyPolicyDialog)
+                        SettingsItemType.SETTINGS_ITEM_TNC -> navigateTo(R.id.privacyPolicyDialog)
                     }
                 }
             })
