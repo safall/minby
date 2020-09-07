@@ -25,6 +25,11 @@
         android:name="com.afi.minby.profile.ProfileFragment"
         tools:layout="@layout/profile_fragment" />
 
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.afi.minby.settings.SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
     <activity
         android:id="@+id/sendIdeaActivity"
         android:name="com.afi.minby.sendidea.SendIdeaActivity"
