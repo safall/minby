@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/title"
-        style="@style/Title"
+        style="@style/TitleBold16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/textRight"

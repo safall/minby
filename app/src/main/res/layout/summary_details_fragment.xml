@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/userEmail"
-        style="@style/Title"
+        style="@style/TitleBold16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -54,7 +54,7 @@
 
     <TextView
         android:id="@+id/location"
-        style="@style/Title"
+        style="@style/TitleBold16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -73,7 +73,7 @@
 
     <TextView
         android:id="@+id/category"
-        style="@style/Title"
+        style="@style/TitleBold16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -94,7 +94,7 @@
 
     <TextView
         android:id="@+id/descHeader"
-        style="@style/Title"
+        style="@style/TitleBold16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -118,7 +118,7 @@
 
     <TextView
         android:id="@+id/images"
-        style="@style/Title"
+        style="@style/TitleBold16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
