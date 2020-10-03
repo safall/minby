@@ -12,6 +12,7 @@ import com.afi.minby.settings.subpage.model.PrivacyList
 import kotlinx.android.synthetic.main.dialog_change_password.backIcon
 import kotlinx.android.synthetic.main.fragment_settings.*
 
+const val KEY_PRIVACY = "key:privacy"
 class PrivacyPolicyDialog : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,10 @@ class PrivacyPolicyDialog : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val isPrivacy = arguments?.getBoolean(KEY_PRIVACY, false) ?: true
+        toolbarTitle.text = view.context.getText(
+            if (isPrivacy) R.string.privacy_policy else R.string.terms_and_conditions
+        )
         backIcon.setOnClickListener { dismiss() }
         with(recyclerView) {
             adapter = PrivacyAdapter(PrivacyList.getItems())

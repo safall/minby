@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.core.getDimensionPixelSize
 import com.afi.minby.home.homemenu.AdapterCallback
+import com.afi.minby.settings.subpage.KEY_PRIVACY
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
@@ -18,11 +19,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             SettingsItemList.getItems(),
             object : AdapterCallback {
                 override fun <T> onItemClicked(item: T) {
-                    when ((item as SettingsItem).type) {
-                        SettingsItemType.SETTINGS_ITEM_CHANGE_PASSWORD -> navigateTo(R.id.changePasswordDialog)
-                        SettingsItemType.SETTINGS_ITEM_PRIVACY -> navigateTo(R.id.privacyPolicyDialog)
-                        SettingsItemType.SETTINGS_ITEM_TNC -> navigateTo(R.id.privacyPolicyDialog)
-                    }
+                    navigateTo((item as SettingsItem).type)
                 }
             })
 
@@ -32,7 +29,19 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         }
     }
 
-    private fun navigateTo(@IdRes resId: Int) {
-        NavHostFragment.findNavController(hostFragment).navigate(resId)
+    private fun navigateTo(type: SettingsItemType) {
+        when (type) {
+            SettingsItemType.SETTINGS_ITEM_CHANGE_PASSWORD -> NavHostFragment.findNavController(
+                hostFragment
+            ).navigate(R.id.changePasswordDialog)
+            SettingsItemType.SETTINGS_ITEM_PRIVACY -> NavHostFragment.findNavController(hostFragment)
+                .navigate(R.id.privacyPolicyDialog)
+            SettingsItemType.SETTINGS_ITEM_TNC -> {
+                val bundle = Bundle().apply { arguments?.putBoolean(KEY_PRIVACY, false) }
+                NavHostFragment.findNavController(hostFragment)
+                    .navigate(R.id.privacyPolicyDialog, bundle)
+            }
+        }
+
     }
 }
