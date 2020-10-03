@@ -76,4 +76,5 @@
     <string name="logout">Log Out</string>
     <string name="already_registered">Already registered?</string>
     <string name="your_have_received">Your have received</string>
+    <string name="map">Map</string>
 </resources>

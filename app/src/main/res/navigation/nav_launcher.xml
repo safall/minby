@@ -34,4 +34,9 @@
         android:id="@+id/homeActivity"
         android:name="com.afi.minby.home.HomeActivity"
         tools:layout="@layout/activity_home" />
+
+    <dialog
+        android:id="@+id/privacyPolicyDialog"
+        android:name="com.afi.minby.settings.subpage.PrivacyPolicyDialog"
+        tools:layout="@layout/dialog_privacy" />
 </navigation>

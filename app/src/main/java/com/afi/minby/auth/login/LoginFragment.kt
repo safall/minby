@@ -13,6 +13,7 @@ import com.afi.minby.R
 import com.afi.minby.auth.ScreenState
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -44,6 +45,14 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 ScreenState.LOGIN -> setRegisterState()
                 ScreenState.SIGNUP -> setLoginState()
             }
+        }
+
+        privacy.setOnClickListener {
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.privacyPolicyDialog)
+        }
+
+        terms.setOnClickListener {
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.privacyPolicyDialog)
         }
     }
 

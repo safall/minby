@@ -6,13 +6,9 @@
         android:icon="@drawable/ic_mail"
         android:title="@string/message" />
     <item
-        android:id="@+id/feedFragment"
-        android:icon="@drawable/ic_home"
-        android:title="@string/feed" />
-    <item
         android:id="@+id/enterLocationFragment"
         android:icon="@drawable/ic_location"
-        android:title="@string/categories" />
+        android:title="@string/map" />
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_user"
