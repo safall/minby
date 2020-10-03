@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/thankYou"
-        style="@style/Header"
+        style="@style/HeaderBold40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -42,7 +42,7 @@
 
     <TextView
         android:id="@+id/yourIdeaText"
-        style="@style/SubTitle"
+        style="@style/SubtitleRegular14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -65,7 +65,7 @@
 
     <TextView
         android:id="@+id/scoreText"
-        style="@style/Header"
+        style="@style/HeaderBold40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"

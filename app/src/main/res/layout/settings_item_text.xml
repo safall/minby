@@ -11,23 +11,25 @@
 
     <TextView
         android:id="@+id/title"
-        style="@style/TitleBold16"
+        style="@style/SubtitleRegular16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:layout_toStartOf="@+id/textRight"
         android:ellipsize="end"
         android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textRight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Facebook" />
 
     <TextView
         android:id="@+id/textRight"
-        style="@style/SubTitle"
+        style="@style/TitleBold14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
+        android:textColor="@color/colorPrimaryDark"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

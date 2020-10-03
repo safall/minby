@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/appName"
-        style="@style/Header"
+        style="@style/HeaderBold40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -101,7 +101,7 @@
 
         <TextView
             android:id="@+id/dontHaveUser"
-            style="@style/SubTitle"
+            style="@style/SubtitleRegular14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -114,7 +114,7 @@
 
         <TextView
             android:id="@+id/register"
-            style="@style/SubTitle"
+            style="@style/TitleBold14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -128,7 +128,7 @@
 
         <TextView
             android:id="@+id/loginOrSignUpWith"
-            style="@style/SubTitle"
+            style="@style/SubtitleRegular14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -177,7 +177,7 @@
 
         <TextView
             android:id="@+id/terms"
-            style="@style/Caption"
+            style="@style/TitleBold14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -188,7 +188,7 @@
 
         <TextView
             android:id="@+id/privacy"
-            style="@style/Caption"
+            style="@style/TitleBold14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"

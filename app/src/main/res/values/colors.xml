@@ -18,13 +18,13 @@
     <color name="app_background">#FAFAFA</color>
 
     <color name="building_and_construction">#5E61F2</color>
-    <color name="nature_and_green">#15B76C</color>
-    <color name="activities_and_training">#EC5536</color>
-    <color name="technology">#DE3163</color>
-    <color name="organisation">#A151F2</color>
+    <color name="nature_and_green">#038548</color>
+    <color name="activities_and_training">#D63818</color>
+    <color name="technology">#D63161</color>
+    <color name="organisation">#974CE3</color>
     <color name="edit_text_background_color">#EDEDED</color>
     <color name="form_text_color">#666666</color>
-    <color name="social">#ED7014</color>
+    <color name="social">#C25200</color>
     <color name="title_text_color">#707373</color>
     <color name="title_color_idea">#3F4040</color>
 </resources>
