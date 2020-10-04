@@ -31,8 +31,10 @@
     <string name="enter_details">Angi detaljer</string>
     <string name="gallery">Bibliotek</string>
     <string name="camera">Kamera</string>
-
-
+    <string name="summary">Sammendrag</string>
+    <string name="description">Beskrivelse</string>
+    <string name="images">Bilder</string>
+    <string name="submit">Sende inn</string>
 
 
 
@@ -51,15 +53,11 @@
     <string name="minby">MinBy</string>
     <string name="register">Registrer deg</string>
     <string name="settings">settings</string>
-    <string name="submit">Submit</string>
     <string name="thank_you">Tusen \n takk!</string>
     <string name="we_build_city_together">Vi bygger byen sammen</string>
 
 
 
-    <string name="summary">Sammendrag</string>
-    <string name="description">Beskrivelse</string>
-    <string name="images">Bilder</string>
     <string name="feed">Innlegg</string>
 
 </resources>

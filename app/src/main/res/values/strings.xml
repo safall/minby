@@ -29,7 +29,10 @@
     <string name="enter_details">Enter Details</string>
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
-
+    <string name="summary">Summary</string>
+    <string name="description">Description</string>
+    <string name="images">Images</string>
+    <string name="submit">Submit</string>
 
 
 
@@ -53,7 +56,6 @@
     <string name="Password_not_matched"> Password not matched</string>
     <string name="register">Register</string>
     <string name="settings">Settings</string>
-    <string name="submit">Submit</string>
     <string name="server_client_id">"359724204371-goaj8d2qbicd9ki23hiqo1vg1ktglukr.apps.googleusercontent.com"</string>
     <string name="thank_you">Thank you!</string>
     <string name="we_build_city_together">We build the city together</string>
@@ -64,9 +66,6 @@
 
 
 
-    <string name="summary">Summary</string>
-    <string name="description">Description</string>
-    <string name="images">Images</string>
     <string name="profile">Profile</string>
     <string name="edit_profile">Edit Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
