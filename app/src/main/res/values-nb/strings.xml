@@ -13,12 +13,20 @@
     <string name="good_day">God dag!</string>
     <string name="what_do_you_want_to_do">Hva onsker du a gjore idag?</string>
 
-    <string name="select_catagories">Velg Kategories</string>
+    <string name="social">sosial</string>
+    <string name="building_and_construction">Bygg og Anlegg</string>
+    <string name="nature_and_green">Natur og grønt</string>
+    <string name="activities_and_training">Aktiviteter og trening</string>
+    <string name="technology">Teknologi</string>
+    <string name="organisation">Organisasjon</string>
+    <string name="another">annet</string>
+    <string name="select_categories">Velg Kategories</string>
+
+
     <string name="select_an_image">Velg et bilde</string>
     <string name="take_a_picture">Ta bilde</string>
     <string name="give_a_description">Gi en beskrivelse</string>
     <string name="complete">Complete</string>
-    <string name="another">annet</string>
     <string name="app_name">MinBy</string>
     <string name="categories">Categories</string>
     <string name="copied">copied</string>
@@ -35,12 +43,7 @@
     <string name="we_build_city_together">Vi bygger byen sammen</string>
 
 
-    <string name="social">sosial</string>
-    <string name="building_and_construction">Bygg og Anlegg</string>
-    <string name="nature_and_green">Natur og grønt</string>
-    <string name="activities_and_training">Aktiviteter og trening</string>
-    <string name="technology">Teknologi</string>
-    <string name="organisation">Organisasjon</string>
+
 
     <string name="gallery">Bibliotek</string>
     <string name="camera">Kamera</string>
