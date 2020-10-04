@@ -33,15 +33,21 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".LauncherActivity">
+        <activity
+            android:name=".LauncherActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".home.HomeActivity" />
-        <activity android:name=".sendidea.SendIdeaActivity" />
+        <activity android:name=".home.HomeActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".sendidea.SendIdeaActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
