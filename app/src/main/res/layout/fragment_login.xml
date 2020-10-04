@@ -45,7 +45,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginBottom="15dp"
             android:paddingTop="24dp"
-            android:text="@string/logg_in"
+            android:text="@string/login"
             app:layout_constraintBottom_toTopOf="@id/email"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -55,7 +55,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
-            android:hint="@string/mailaddress"
+            android:hint="@string/email"
             app:layout_constraintBottom_toTopOf="@id/password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,11 +67,11 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
-            android:hint="@string/Password"
+            android:hint="@string/password"
             app:layout_constraintBottom_toTopOf="@id/confirmPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="@string/Password" />
+            tools:text="@string/password" />
 
         <EditText
             android:id="@+id/confirmPassword"
@@ -79,12 +79,12 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
-            android:hint="@string/confirm_password"
+            android:hint="@string/confirmPassword"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="@string/confirm_password"
+            tools:text="@string/confirmPassword"
             tools:visibility="visible" />
 
         <Button
@@ -96,7 +96,7 @@
             android:layout_marginEnd="20dp"
             android:enabled="false"
             android:layout_marginBottom="15dp"
-            android:text="@string/logg_in"
+            android:text="@string/login"
             app:layout_constraintBottom_toTopOf="@id/dontHaveUser"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -106,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="@string/dont_have_use"
+            android:text="@string/dontHaveUser"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/loginOrSignUpWith"
             app:layout_constraintEnd_toStartOf="@+id/register"
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="15dp"
-            android:text="@string/register"
+            android:text="@string/signup"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/loginOrSignUpWith"
@@ -135,7 +135,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
-            android:text="@string/login_or_signup_with"
+            android:text="@string/loginOrSignupWith"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/facebook"
             app:layout_constraintEnd_toEndOf="parent"

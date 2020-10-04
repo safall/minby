@@ -117,10 +117,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val animZoomIn = AnimationUtils.loadAnimation(context, R.anim.zoom_in)
         circularView.startAnimation(animZoomIn)
         confirmPassword.visibility = View.VISIBLE
-        button.text = requireContext().getText(R.string.sign_up)
+        button.text = requireContext().getText(R.string.signup)
         dontHaveUser.text = requireContext().getText(R.string.already_registered)
-        register.text = requireContext().getText(R.string.logg_in)
-        containerHeading.text = requireContext().getText(R.string.sign_up)
+        register.text = requireContext().getText(R.string.login)
+        containerHeading.text = requireContext().getText(R.string.signup)
         button.isEnabled = false
     }
 
@@ -129,10 +129,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val animZoomOut = AnimationUtils.loadAnimation(context, R.anim.zoom_out)
         circularView.startAnimation(animZoomOut)
         confirmPassword.visibility = View.GONE
-        button.text = requireContext().getText(R.string.logg_in)
-        dontHaveUser.text = requireContext().getText(R.string.dont_have_use)
+        button.text = requireContext().getText(R.string.login)
+        dontHaveUser.text = requireContext().getText(R.string.dontHaveUser)
         register.text = requireContext().getText(R.string.register)
-        containerHeading.text = requireContext().getText(R.string.logg_in)
+        containerHeading.text = requireContext().getText(R.string.login)
         confirmPassword.text.clear()
         button.isEnabled = email.text.isNotBlank() && password.text.isNotBlank()
     }
