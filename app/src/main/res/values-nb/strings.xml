@@ -46,6 +46,14 @@
     <string name="fullname">Fullt navn</string>
     <string name="user_address">Brukeradresse</string>
     <string name="save">Lagre</string>
+    <string name="version">Versjon</string>
+    <string name="change_password">Bytt passord</string>
+    <string name="logout">Logg ut</string>
+    <string name="push_notification">Push-varsel</string>
+    <string name="version_number">1.0.0</string>
+    <string name="settings">Innstillinger</string>
+    <string name="home">Hjem</string>
+    <string name="map">Kart</string>
 
 
 
@@ -55,15 +63,9 @@
     <string name="categories">Categories</string>
     <string name="copied">copied</string>
     <string name="existing_use">Eksisterende bruke?</string>
-    <string name="home">home</string>
     <string name="message">message</string>
     <string name="minby">MinBy</string>
     <string name="register">Registrer deg</string>
-    <string name="settings">settings</string>
     <string name="we_build_city_together">Vi bygger byen sammen</string>
-
-
-
     <string name="feed">Innlegg</string>
-
 </resources>

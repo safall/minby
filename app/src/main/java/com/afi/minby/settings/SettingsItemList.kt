@@ -1,6 +1,5 @@
 package com.afi.minby.settings
 
-import com.afi.minby.BuildConfig
 import com.afi.minby.R
 import com.afi.minby.settings.SettingsItemType.*
 
@@ -26,7 +25,7 @@ object SettingsItemList {
             SettingsItem(R.string.privacy_policy, null, null, SETTINGS_ITEM_PRIVACY),
             SettingsItem(
                 R.string.version,
-                BuildConfig.VERSION_CODE,
+                R.string.version_number,
                 null,
                 SETTINGS_ITEM_VERSION
             ),
