@@ -40,7 +40,9 @@
     <string name="your_have_received">Du har mottatt</string>
     <string name="two_points">+2 poeng!</string>
     <string name="finish">Ferdig</string>
-
+    <string name="profile">Profil</string>
+    <string name="edit_profile">Rediger Profile</string>
+    <string name="total_score_count">Totalt Min By poeng</string>
 
 
 
