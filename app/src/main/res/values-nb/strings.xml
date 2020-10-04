@@ -23,10 +23,22 @@
     <string name="select_categories">Velg Kategories</string>
     <string name="next">Neste</string>
 
-
-    <string name="select_an_image">Velg et bilde</string>
-    <string name="take_a_picture">Ta bilde</string>
     <string name="give_a_description">Gi en beskrivelse</string>
+    <string name="description_hint">Skriv gjerne inn en beskrivelse av ideen. Maksimalt 300 tegn</string>
+    <string name="max_500_characters">Maks 500 tegn</string>
+    <string name="record_instead">Ta opp i stedet</string>
+    <string name="select_an_image">Velg et bilde</string>
+    <string name="enter_details">Angi detaljer</string>
+    <string name="gallery">Bibliotek</string>
+    <string name="camera">Kamera</string>
+
+
+
+
+
+
+
+    <string name="take_a_picture">Ta bilde</string>
     <string name="complete">Complete</string>
     <string name="app_name">MinBy</string>
     <string name="categories">Categories</string>
@@ -44,11 +56,7 @@
     <string name="we_build_city_together">Vi bygger byen sammen</string>
 
 
-    <string name="gallery">Bibliotek</string>
-    <string name="camera">Kamera</string>
-    <string name="max_500_characters">Maks 500 tegn</string>
-    <string name="record_instead">Ta opp i stedet</string>
-    <string name="enter_details">Angi detaljer</string>
+
     <string name="summary">Sammendrag</string>
     <string name="description">Beskrivelse</string>
     <string name="images">Bilder</string>
