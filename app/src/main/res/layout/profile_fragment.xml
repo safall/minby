@@ -8,25 +8,14 @@
     tools:context=".profile.ProfileFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/toolbarTitle"
         style="@style/TitleBold18"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/profile"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/backIcon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:elevation="10dp"
-        android:src="@drawable/ic_back_arrow"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -37,7 +26,7 @@
         android:src="@drawable/ic_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backIcon" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarTitle" />
 
     <TextView
         android:id="@+id/userName"
@@ -68,8 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="14sp"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userEmail"

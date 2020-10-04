@@ -20,9 +20,5 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
         editProfileButton.setOnClickListener {
             NavHostFragment.findNavController(hostFragment).navigate(R.id.editProfileDialog)
         }
-
-        backIcon.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
     }
 }
