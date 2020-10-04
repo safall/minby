@@ -42,6 +42,7 @@ class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
         backIcon.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        nextButton.isEnabled = description.text.isNotBlank()
         description.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) = Unit
 
