@@ -2,6 +2,8 @@ package com.afi.minby.auth.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -14,7 +16,6 @@ import com.afi.minby.auth.ScreenState
 import com.afi.minby.settings.subpage.KEY_PRIVACY
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -30,15 +31,15 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         facebook.setOnClickListener {
-            viewModel.initFBLogin()
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
         }
 
         google.setOnClickListener {
-            viewModel.initGoogleLogin()
+            NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
         }
 
         button.setOnClickListener {
-            viewModel.attemptLogin(password.text.toString(), password.text.toString())
+            viewModel.attemptLogin(email.text.toString(), password.text.toString())
         }
 
         register.setOnClickListener {
@@ -48,6 +49,54 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             }
         }
 
+        email.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) = Unit
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
+                Unit
+
+            override fun onTextChanged(
+                s: CharSequence,
+                start: Int,
+                before: Int,
+                count: Int
+            ) {
+                button.isEnabled = s.isNotBlank() && password.text.isNotBlank()
+            }
+        })
+
+        password.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) = Unit
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
+                Unit
+
+            override fun onTextChanged(
+                s: CharSequence,
+                start: Int,
+                before: Int,
+                count: Int
+            ) {
+                button.isEnabled = s.isNotBlank() && email.text.isNotBlank()
+            }
+        })
+
+        confirmPassword.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) = Unit
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
+                Unit
+
+            override fun onTextChanged(
+                s: CharSequence,
+                start: Int,
+                before: Int,
+                count: Int
+            ) {
+                button.isEnabled =
+                    s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank()
+            }
+        })
 
         privacy.setOnClickListener {
             NavHostFragment.findNavController(host_fragment)
@@ -70,6 +119,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         dontHaveUser.text = requireContext().getText(R.string.already_registered)
         register.text = requireContext().getText(R.string.logg_in)
         containerHeading.text = requireContext().getText(R.string.sign_up)
+        button.isEnabled = false
     }
 
     private fun setLoginState() {
@@ -81,6 +131,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         dontHaveUser.text = requireContext().getText(R.string.dont_have_use)
         register.text = requireContext().getText(R.string.register)
         containerHeading.text = requireContext().getText(R.string.logg_in)
+        confirmPassword.text.clear()
+        button.isEnabled = email.text.isNotBlank() && password.text.isNotBlank()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
