@@ -32,10 +32,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         super.onViewCreated(view, savedInstanceState)
         facebook.setOnClickListener {
             NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+            activity?.finish()
         }
 
         google.setOnClickListener {
             NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+            activity?.finish()
         }
 
         button.setOnClickListener {
@@ -151,6 +153,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         viewModel.authenticationSuccessful.observe(viewLifecycleOwner, Observer {
             if (it) {
                 NavHostFragment.findNavController(host_fragment).navigate(R.id.loginToHomeActivity)
+                activity?.finish()
             } else {
                 Toast.makeText(requireContext(), "Problem signing in to google", Toast.LENGTH_LONG)
                     .show()
