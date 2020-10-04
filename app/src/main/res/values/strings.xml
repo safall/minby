@@ -9,7 +9,8 @@
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="already_registered">Already registered?</string>
-
+    <string name="good_day">Good day!</string>
+    <string name="what_do_you_want_to_do">What do you want to do today?</string>
 
     <string name="another">Other</string>
     <string name="app_name">MinBy</string>
@@ -21,10 +22,8 @@
     <string name="existing_use">Existing use?</string>
     <string name="facebook_app_id">570257243697104</string>
     <string name="fb_login_protocol_scheme">fb570257243697104</string>
-    <string name="good_day">Good day!</string>
     <string name="dont_have_use">Don\'t have a user?</string>
     <string name="home">home</string>
-    <string name="what_do_you_want_to_do">What do you want to do today?</string>
     <string name="message">message</string>
     <string name="message_hint">Hi, speak something...</string>
     <string name="minby">MinBy</string>
