@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:gravity="center"
-        android:text="+2 points!"
+        android:text="@string/two_points"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yourScoreText" />
 

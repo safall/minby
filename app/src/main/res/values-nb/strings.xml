@@ -35,6 +35,11 @@
     <string name="description">Beskrivelse</string>
     <string name="images">Bilder</string>
     <string name="submit">Sende inn</string>
+    <string name="thank_you">Tusen \n takk!</string>
+    <string name="your_help">Din ide er med på å \n skape en forskjell</string>
+    <string name="your_have_received">Du har mottatt</string>
+    <string name="two_points">+2 poeng!</string>
+    <string name="finish">Ferdig</string>
 
 
 
@@ -45,15 +50,12 @@
     <string name="app_name">MinBy</string>
     <string name="categories">Categories</string>
     <string name="copied">copied</string>
-    <string name="your_help">Din ide er med på å \n skape en forskjell</string>
     <string name="existing_use">Eksisterende bruke?</string>
-    <string name="finish">Ferdig</string>
     <string name="home">home</string>
     <string name="message">message</string>
     <string name="minby">MinBy</string>
     <string name="register">Registrer deg</string>
     <string name="settings">settings</string>
-    <string name="thank_you">Tusen \n takk!</string>
     <string name="we_build_city_together">Vi bygger byen sammen</string>
 
 
