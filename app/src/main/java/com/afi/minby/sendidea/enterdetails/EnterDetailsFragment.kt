@@ -4,6 +4,8 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
@@ -12,9 +14,6 @@ import com.afi.minby.model.IdeaTemplateImpl
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_details_fragment.*
-import kotlinx.android.synthetic.main.enter_details_fragment.backIcon
-import kotlinx.android.synthetic.main.enter_details_fragment.nextButton
-import kotlinx.android.synthetic.main.enter_location_fragment.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -43,6 +42,21 @@ class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
         backIcon.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        description.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) = Unit
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
+                Unit
+
+            override fun onTextChanged(
+                s: CharSequence,
+                start: Int,
+                before: Int,
+                count: Int
+            ) {
+                nextButton.isEnabled = s.isNotBlank()
+            }
+        })
     }
 
     private fun speak() {
