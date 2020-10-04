@@ -18,6 +18,8 @@ import com.afi.minby.sendidea.categories.model.Category
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.categories_fragment.*
+import kotlinx.android.synthetic.main.categories_fragment.backIcon
+import kotlinx.android.synthetic.main.enter_location_fragment.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -30,6 +32,10 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("categories fragment", template.ideaTemplate.toString())
+
+        backIcon.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
 
         val categoriesAdapter = CategoriesAdapter(
             CategoriesList.getCategories(requireContext()),

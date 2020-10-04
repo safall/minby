@@ -21,6 +21,7 @@
     <string name="organisation">Organisasjon</string>
     <string name="another">annet</string>
     <string name="select_categories">Velg Kategories</string>
+    <string name="next">Neste</string>
 
 
     <string name="select_an_image">Velg et bilde</string>
@@ -43,13 +44,10 @@
     <string name="we_build_city_together">Vi bygger byen sammen</string>
 
 
-
-
     <string name="gallery">Bibliotek</string>
     <string name="camera">Kamera</string>
     <string name="max_500_characters">Maks 500 tegn</string>
     <string name="record_instead">Ta opp i stedet</string>
-    <string name="next">Neste</string>
     <string name="enter_details">Angi detaljer</string>
     <string name="summary">Sammendrag</string>
     <string name="description">Beskrivelse</string>

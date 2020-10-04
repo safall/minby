@@ -40,6 +40,9 @@ class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapR
             NavHostFragment.findNavController(host_fragment)
                 .navigate(R.id.enterLocationFragmentToEnterDetailsFragment)
         }
+        backIcon.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun onMapReady(map: GoogleMap?) {
@@ -54,6 +57,7 @@ class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapR
                     title(it.latitude.toString() + " : " + it.longitude.toString())
                 })
                 currentLatLng = it
+                nextButton.isEnabled = true
             }
         }
     }
