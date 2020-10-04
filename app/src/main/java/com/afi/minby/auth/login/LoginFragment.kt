@@ -131,7 +131,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         confirmPassword.visibility = View.GONE
         button.text = requireContext().getText(R.string.login)
         dontHaveUser.text = requireContext().getText(R.string.dontHaveUser)
-        register.text = requireContext().getText(R.string.register)
+        register.text = requireContext().getText(R.string.signup)
         containerHeading.text = requireContext().getText(R.string.login)
         confirmPassword.text.clear()
         button.isEnabled = email.text.isNotBlank() && password.text.isNotBlank()

@@ -170,7 +170,7 @@
             android:drawableStart="@drawable/com_facebook_favicon_blue"
             android:gravity="center"
             android:padding="14dp"
-            android:text="Google"
+            android:text="@string/google"
             android:textColor="#707373"
             app:layout_constraintBottom_toTopOf="@id/privacy"
             app:layout_constraintEnd_toEndOf="parent"

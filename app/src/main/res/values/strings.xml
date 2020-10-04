@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">MinBy</string>
+    <string name="minby">MinBy</string>
     <string name="login">Log in</string>
     <string name="email">Email address</string>
     <string name="password">Password</string>
@@ -18,7 +21,6 @@
     <string name="technology">Technology</string>
     <string name="organisation">Organisation</string>
     <string name="another">Other</string>
-
     <string name="select_categories">Select Categories</string>
     <string name="next">Next</string>
     <string name="give_a_description">Give a description</string>
@@ -52,38 +54,11 @@
     <string name="settings">Settings</string>
     <string name="home">Home</string>
     <string name="map">Map</string>
-
-
-    <string name="app_name">MinBy</string>
-    <string name="categories">Categories</string>
-    <string name="copied">copied</string>
-    <string name="continue_with_facebook">Continue with Facebook</string>
-    <string name="continue_with_google">Continue with Google</string>
-    <string name="existing_use">Existing use?</string>
-    <string name="facebook_app_id">570257243697104</string>
-    <string name="fb_login_protocol_scheme">fb570257243697104</string>
-    <string name="dont_have_use">Don\'t have a user?</string>
-    <string name="message">message</string>
-    <string name="message_hint">Hi, speak something...</string>
-    <string name="minby">MinBy</string>
-    <string name="Password_not_matched"> Password not matched</string>
-    <string name="register">Register</string>
-    <string name="server_client_id">"359724204371-goaj8d2qbicd9ki23hiqo1vg1ktglukr.apps.googleusercontent.com"</string>
-    <string name="we_build_city_together">We build the city together</string>
-    <string name="take_a_picture">Take a picture</string>
-    <string name="library">Library</string>
-    <string name="complete">Complete</string>
-
-
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="feed">Feed</string>
-    <string name="facebook">Facebook</string>
     <string name="current_password">Current password</string>
     <string name="new_password">New password</string>
+    <string name="message_hint">Hi, speak something…</string>
+    <string name="copied">copied</string>
+    <string name="we_build_city_together">We build the city together</string>
     <string name="connected">Connected</string>
-    <string name="not_connected">Not Connected</string>
-    <string name="google">Google</string>
-
+    <string name="not_connected">Not connected</string>
 </resources>

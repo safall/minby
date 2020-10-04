@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_client_id" translatable="false">"359724204371-goaj8d2qbicd9ki23hiqo1vg1ktglukr.apps.googleusercontent.com"</string>
+    <string name="facebook_app_id" translatable="false">570257243697104</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb570257243697104</string>
+    <string name="facebook" translatable="false">Facebook</string>
+    <string name="google" translatable="false">Google</string>
+</resources>
