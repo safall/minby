@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
-import com.afi.minby.sendidea.enterdetails.viewmodel.EnterDetailsViewModel
+import com.afi.minby.model.IdeaTemplateImpl
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_details_fragment.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
@@ -21,17 +21,21 @@ class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
         private const val VOICE_RECOGNITION_REQUEST_CODE = 200
     }
 
-    private val viewModel: EnterDetailsViewModel by viewModels()
+    @Inject
+    lateinit var template: IdeaTemplateImpl
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (template.ideaTemplate.description.isNotBlank()) {
+            description.setText(template.ideaTemplate.description)
+        }
         voiceIcon.setOnClickListener { speak() }
         nextButton.setOnClickListener {
-            val bundle = Bundle().apply {
-                arguments?.putString("ARG_DESCRIPTION", description.text.toString())
-            }
+            val desc = description.text.toString()
+            val updatedTempl = template.ideaTemplate.copy(description = desc)
+            template.update(updatedTempl)
             NavHostFragment.findNavController(host_fragment)
-                .navigate(R.id.enterDetailsFragmentToSummaryDetailsFragment, bundle)
+                .navigate(R.id.enterDetailsFragmentToSummaryDetailsFragment)
         }
     }
 
