@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_launcher.*
 import kotlinx.android.synthetic.main.fragment_login.*
+
 
 @AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -68,7 +70,20 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         })
 
         password.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) = Unit
+            override fun afterTextChanged(s: Editable?) = run {
+                if (screenState == ScreenState.SIGNUP) {
+                    val pw = password.text.toString()
+                    val cPassword = confirmPassword.text.toString()
+                    val isPasswordValid = pw == cPassword
+                    if (!isPasswordValid) {
+                        confirmPassword.error = "Passwords do not match"
+                        password.error = "Passwords do not match"
+                    } else {
+                        confirmPassword.error = null
+                        password.error = null
+                    }
+                }
+            }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
                 Unit
@@ -79,12 +94,50 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 before: Int,
                 count: Int
             ) {
-                button.isEnabled = s.isNotBlank() && email.text.isNotBlank()
+                if (screenState == ScreenState.LOGIN) {
+                    button.isEnabled = s.isNotBlank() && email.text.isNotBlank()
+                } else {
+                    button.isEnabled =
+                        s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank()
+                }
             }
         })
 
+        password.setOnEditorActionListener { v, actionId, event ->
+            when (actionId) {
+                EditorInfo.IME_ACTION_DONE -> {
+                    viewModel.attemptLogin(email.text.toString(), password.text.toString())
+                    true
+                }
+                else -> false
+            }
+        }
+
+        confirmPassword.setOnEditorActionListener { v, actionId, event ->
+            when (actionId) {
+                EditorInfo.IME_ACTION_DONE -> {
+                    viewModel.attemptLogin(email.text.toString(), password.text.toString())
+                    true
+                }
+                else -> false
+            }
+        }
+
         confirmPassword.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) = Unit
+            override fun afterTextChanged(s: Editable?) = run {
+                if (screenState == ScreenState.SIGNUP) {
+                    val pw = password.text.toString()
+                    val cPassword = confirmPassword.text.toString()
+                    val isPasswordValid = pw == cPassword
+                    if (!isPasswordValid) {
+                        confirmPassword.error = "Passwords do not match"
+                        password.error = "Passwords do not match"
+                    } else {
+                        confirmPassword.error = null
+                        password.error = null
+                    }
+                }
+            }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
                 Unit
@@ -95,8 +148,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 before: Int,
                 count: Int
             ) {
-                button.isEnabled =
-                    s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank()
+                button.isEnabled = s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank()
             }
         })
 
@@ -122,6 +174,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         register.text = requireContext().getText(R.string.login)
         containerHeading.text = requireContext().getText(R.string.signup)
         button.isEnabled = false
+        password.imeOptions = EditorInfo.IME_ACTION_NEXT
     }
 
     private fun setLoginState() {
@@ -135,6 +188,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         containerHeading.text = requireContext().getText(R.string.login)
         confirmPassword.text.clear()
         button.isEnabled = email.text.isNotBlank() && password.text.isNotBlank()
+        password.imeOptions = EditorInfo.IME_ACTION_DONE
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
