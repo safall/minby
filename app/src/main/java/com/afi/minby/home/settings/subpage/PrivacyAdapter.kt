@@ -1,11 +1,11 @@
-package com.afi.minby.settings.subpage
+package com.afi.minby.home.settings.subpage
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.afi.minby.R
 import com.afi.minby.core.inflate
-import com.afi.minby.settings.subpage.model.Terms
+import com.afi.minby.home.settings.subpage.model.Terms
 import kotlinx.android.synthetic.main.privacy_item.view.*
 
 class PrivacyAdapter(var items: List<Terms>) :

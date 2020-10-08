@@ -1,7 +1,7 @@
-package com.afi.minby.settings
+package com.afi.minby.home.settings
 
 import com.afi.minby.R
-import com.afi.minby.settings.SettingsItemType.*
+import com.afi.minby.home.settings.SettingsItemType.*
 
 object SettingsItemList {
 

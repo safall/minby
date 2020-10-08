@@ -1,4 +1,4 @@
-package com.afi.minby.settings
+package com.afi.minby.home.settings
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.afi.minby.LauncherActivity
 import com.afi.minby.R
 import com.afi.minby.core.getDimensionPixelSize
 import com.afi.minby.home.homemenu.AdapterCallback
-import com.afi.minby.settings.subpage.KEY_PRIVACY
+import com.afi.minby.home.settings.subpage.KEY_PRIVACY
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 

@@ -1,4 +1,4 @@
-package com.afi.minby.settings
+package com.afi.minby.home.settings
 
 enum class SettingsItemType {
     SETTINGS_ITEM_PUSH_NOTIFICATION,

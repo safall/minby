@@ -1,4 +1,4 @@
-package com.afi.minby.settings.subpage.model
+package com.afi.minby.home.settings.subpage.model
 
 
 object PrivacyList {

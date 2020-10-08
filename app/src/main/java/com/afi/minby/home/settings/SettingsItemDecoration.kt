@@ -1,4 +1,4 @@
-package com.afi.minby.settings
+package com.afi.minby.home.settings
 
 import android.graphics.Rect
 import android.view.View

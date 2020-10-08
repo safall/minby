@@ -1,4 +1,4 @@
-package com.afi.minby.settings.subpage
+package com.afi.minby.home.settings.subpage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.afi.minby.R
 import com.afi.minby.core.getDimensionPixelSize
-import com.afi.minby.settings.SettingsItemDecoration
-import com.afi.minby.settings.subpage.model.PrivacyList
+import com.afi.minby.home.settings.SettingsItemDecoration
+import com.afi.minby.home.settings.subpage.model.PrivacyList
 import kotlinx.android.synthetic.main.dialog_change_password.backIcon
 import kotlinx.android.synthetic.main.fragment_settings.*
 

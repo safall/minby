@@ -1,4 +1,4 @@
-package com.afi.minby.settings.subpage
+package com.afi.minby.home.settings.subpage
 
 import android.os.Bundle
 import android.view.LayoutInflater
