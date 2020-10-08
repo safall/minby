@@ -76,8 +76,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     val cPassword = confirmPassword.text.toString()
                     val isPasswordValid = pw == cPassword
                     if (!isPasswordValid) {
-                        confirmPassword.error = "Passwords do not match"
-                        password.error = "Passwords do not match"
+                        confirmPassword.error = getString(R.string.password_donot_match)
+                        password.error = getString(R.string.password_donot_match)
                     } else {
                         confirmPassword.error = null
                         password.error = null
@@ -130,8 +130,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     val cPassword = confirmPassword.text.toString()
                     val isPasswordValid = pw == cPassword
                     if (!isPasswordValid) {
-                        confirmPassword.error = "Passwords do not match"
-                        password.error = "Passwords do not match"
+                        confirmPassword.error = getString(R.string.password_donot_match)
+                        password.error = getString(R.string.password_donot_match)
                     } else {
                         confirmPassword.error = null
                         password.error = null

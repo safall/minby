@@ -61,4 +61,7 @@
     <string name="we_build_city_together">We build the city together</string>
     <string name="connected">Connected</string>
     <string name="not_connected">Not connected</string>
+    <string name="profile_updated">Profile updated successfully!</string>
+    <string name="password_donot_match">Passwords do not match</string>
+    <string name="password_changed">Password successfully changed</string>
 </resources>

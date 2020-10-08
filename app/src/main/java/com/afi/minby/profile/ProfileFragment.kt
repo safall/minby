@@ -13,7 +13,7 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         userName.text = "John Doe"
-        userAddress.text = "Hollywood, TX"
+        userAddress.text = "Hollywood park, TX"
         userEmail.text = "john.doe@johndoe.com"
         points.text = "84"
 

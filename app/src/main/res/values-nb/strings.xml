@@ -61,4 +61,7 @@
     <string name="copied">copied</string>
     <string name="connected">Tilkoblet</string>
     <string name="not_connected">Ikke Tilkoblet</string>
+    <string name="profile_updated">Profilen oppdatert!</string>
+    <string name="password_donot_match">passordene er ikke like</string>
+    <string name="password_changed">Password successfully changed</string>
 </resources>

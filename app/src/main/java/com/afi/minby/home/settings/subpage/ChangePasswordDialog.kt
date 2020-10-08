@@ -10,10 +10,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.afi.minby.R
-import com.afi.minby.auth.ScreenState
 import kotlinx.android.synthetic.main.dialog_change_password.*
-import kotlinx.android.synthetic.main.dialog_change_password.confirmPassword
-import kotlinx.android.synthetic.main.fragment_login.*
 
 class ChangePasswordDialog : DialogFragment() {
 
@@ -39,8 +36,8 @@ class ChangePasswordDialog : DialogFragment() {
                 val confP = confirmPassword.text.toString()
                 val isPasswordValid = newP == confP
                 if (!isPasswordValid) {
-                    newPassword.error = "Passwords do not match"
-                    confirmPassword.error = "Passwords do not match"
+                    newPassword.error = getString(R.string.password_donot_match)
+                    confirmPassword.error = getString(R.string.password_donot_match)
                 } else {
                     newPassword.error = null
                     confirmPassword.error = null
@@ -67,8 +64,8 @@ class ChangePasswordDialog : DialogFragment() {
                 val confP = confirmPassword.text.toString()
                 val isPasswordValid = newP == confP
                 if (!isPasswordValid) {
-                    newPassword.error = "Passwords do not match"
-                    confirmPassword.error = "Passwords do not match"
+                    newPassword.error = getString(R.string.password_donot_match)
+                    confirmPassword.error = getString(R.string.password_donot_match)
                 } else {
                     newPassword.error = null
                     confirmPassword.error = null
@@ -92,7 +89,11 @@ class ChangePasswordDialog : DialogFragment() {
         confirmPassword.setOnEditorActionListener { v, actionId, event ->
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
-                    Toast.makeText(requireContext(), "Password successfully changed", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.password_changed),
+                        Toast.LENGTH_LONG
+                    ).show()
                     dismiss()
                     true
                 }
@@ -112,9 +113,9 @@ class ChangePasswordDialog : DialogFragment() {
                 before: Int,
                 count: Int
             ) {
-                save.isEnabled = s.isNotBlank() && newPassword.text.isNotBlank() && confirmPassword.text.isNotBlank()
+                save.isEnabled =
+                    s.isNotBlank() && newPassword.text.isNotBlank() && confirmPassword.text.isNotBlank()
             }
         })
-
     }
 }
