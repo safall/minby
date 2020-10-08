@@ -11,9 +11,9 @@ import com.afi.minby.model.IdeaTemplateImpl
 import com.afi.minby.sendidea.categories.model.CategoriesEnum
 import com.afi.minby.sendidea.categories.model.Category
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.summary_details_fragment.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
@@ -42,7 +42,7 @@ class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
             CategoriesEnum.BUILDING -> color
             CategoriesEnum.SOCIAL -> color
             CategoriesEnum.ACTIVITIES -> color
-            CategoriesEnum.ORGANISATION ->color
+            CategoriesEnum.ORGANISATION -> color
             CategoriesEnum.OTHER -> ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark)
         }
     }

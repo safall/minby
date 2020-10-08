@@ -9,9 +9,9 @@ import com.afi.minby.R
 import com.afi.minby.core.VerticalSpaceDecoration
 import com.afi.minby.model.IdeaTemplateImpl
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.home_fragment.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.home_fragment) {

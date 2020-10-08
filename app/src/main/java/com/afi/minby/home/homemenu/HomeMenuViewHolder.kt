@@ -1,11 +1,8 @@
 package com.afi.minby.home.homemenu
 
-import android.annotation.SuppressLint
 import android.view.View
-import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.afi.minby.R
 import kotlinx.android.synthetic.main.home_menu_item.view.*
 
 class HomeMenuViewHolder(val view: View, private val itemCallback: AdapterCallback) :

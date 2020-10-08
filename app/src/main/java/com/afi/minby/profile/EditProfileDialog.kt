@@ -60,7 +60,7 @@ class EditProfileDialog : DialogFragment() {
             }
         }
         email.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?)  {
+            override fun afterTextChanged(s: Editable?) {
                 if (!email.text.isValidEmail()) {
                     email.error = getString(R.string.invalid_email_format)
                     save.isEnabled = false

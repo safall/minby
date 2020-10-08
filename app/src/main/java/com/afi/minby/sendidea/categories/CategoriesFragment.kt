@@ -10,21 +10,19 @@ import com.afi.minby.R
 import com.afi.minby.core.CategoriesItemDecoration
 import com.afi.minby.home.homemenu.AdapterCallback
 import com.afi.minby.model.IdeaTemplateImpl
-import com.afi.minby.sendidea.IdeaTemplate
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_ANOTHER_CATEGORY
 import com.afi.minby.sendidea.categories.CategoriesAdapter.Companion.VIEW_HOLDER_CATEGORY
 import com.afi.minby.sendidea.categories.model.CategoriesList
 import com.afi.minby.sendidea.categories.model.Category
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.categories_fragment.*
 import kotlinx.android.synthetic.main.categories_fragment.backIcon
 import kotlinx.android.synthetic.main.enter_location_fragment.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoriesFragment : Fragment(R.layout.categories_fragment) {
-
 
     @Inject
     lateinit var template: IdeaTemplateImpl
@@ -41,7 +39,7 @@ class CategoriesFragment : Fragment(R.layout.categories_fragment) {
             CategoriesList.getCategories(requireContext()),
             object : AdapterCallback {
                 override fun <T> onItemClicked(item: T) {
-                    val updatedTempl  = template.ideaTemplate.copy(category = item as Category)
+                    val updatedTempl = template.ideaTemplate.copy(category = item as Category)
                     template.update(updatedTempl)
                     NavHostFragment.findNavController(host_fragment)
                         .navigate(R.id.categoriesFragmentToSelectLocationFragment)

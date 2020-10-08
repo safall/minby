@@ -1,6 +1,5 @@
 package com.afi.minby.home.settings.subpage.model
 
-
 object PrivacyList {
 
     fun getItems(): List<Terms> {

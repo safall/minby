@@ -7,17 +7,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.model.IdeaTemplateImpl
-import com.afi.minby.sendidea.IdeaTemplate
-import com.afi.minby.sendidea.categories.model.Category
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_location_fragment.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapReadyCallback {

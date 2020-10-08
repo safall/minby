@@ -12,9 +12,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.model.IdeaTemplateImpl
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_details_fragment.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
