@@ -26,8 +26,8 @@ class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
         description.text = template.ideaTemplate.description
         category.text = template.ideaTemplate.category.name
         category.setBackgroundColor(template.ideaTemplate.category.getBackgroundColor())
-        location.text = template.ideaTemplate.latlng.toString()
-        userEmail.text = "abc@gmail.com"
+        location.text = "Place name selected from LatLng"
+        userEmail.text = "john.doe@johndoe.com"
 
         submitButton.setOnClickListener {
             NavHostFragment.findNavController(host_fragment)

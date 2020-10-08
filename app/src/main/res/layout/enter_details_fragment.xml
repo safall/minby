@@ -51,7 +51,7 @@
         android:gravity="top"
         android:hint="@string/description_hint"
         app:layout_constraintTop_toBottomOf="@id/descHeader"
-        tools:text="Feel free to enter a Feel free to enter a description of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 characters of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 charactersFeel free to enter a description of the idea. Maximum 300 characters" />
+        tools:text="@string/description_hint"/>
 
     <TextView
         android:id="@+id/selectImageHeader"
