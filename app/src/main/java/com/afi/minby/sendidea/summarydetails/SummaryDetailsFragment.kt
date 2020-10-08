@@ -13,7 +13,9 @@ import com.afi.minby.sendidea.categories.model.Category
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_send_idea.*
+import kotlinx.android.synthetic.main.categories_fragment.*
 import kotlinx.android.synthetic.main.summary_details_fragment.*
+import kotlinx.android.synthetic.main.summary_details_fragment.backIcon
 
 @AndroidEntryPoint
 class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
@@ -32,6 +34,9 @@ class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
         submitButton.setOnClickListener {
             NavHostFragment.findNavController(host_fragment)
                 .navigate(R.id.summaryDetailsFragmentToThankYouFragment)
+        }
+        backIcon.setOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 
