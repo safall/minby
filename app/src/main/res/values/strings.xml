@@ -64,4 +64,5 @@
     <string name="profile_updated">Profile updated successfully!</string>
     <string name="password_donot_match">Passwords do not match</string>
     <string name="password_changed">Password successfully changed</string>
+    <string name="invalid_email_format">Invalid Email address</string>
 </resources>

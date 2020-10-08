@@ -3,7 +3,9 @@ package com.afi.minby.auth.login
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Patterns
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.EditorInfo
@@ -14,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.auth.ScreenState
+import com.afi.minby.core.isValidEmail
 import com.afi.minby.home.settings.subpage.KEY_PRIVACY
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import dagger.hilt.android.AndroidEntryPoint
@@ -65,7 +68,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 before: Int,
                 count: Int
             ) {
-                button.isEnabled = s.isNotBlank() && password.text.isNotBlank()
+                if (!email.text.isValidEmail()) {
+                    email.error = getString(R.string.invalid_email_format)
+                } else {
+                    email.error = null
+                }
+                button.isEnabled = s.isNotBlank() && password.text.isNotBlank() && email.text.isValidEmail()
             }
         })
 
@@ -78,7 +86,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     if (!isPasswordValid) {
                         confirmPassword.error = getString(R.string.password_donot_match)
                         password.error = getString(R.string.password_donot_match)
+                    } else if (!email.text.isValidEmail()) {
+                        email.error = getString(R.string.invalid_email_format)
                     } else {
+                        email.error = null
                         confirmPassword.error = null
                         password.error = null
                     }
@@ -95,10 +106,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 count: Int
             ) {
                 if (screenState == ScreenState.LOGIN) {
-                    button.isEnabled = s.isNotBlank() && email.text.isNotBlank()
+                    button.isEnabled = s.isNotBlank() && email.text.isNotBlank() && email.text.isValidEmail()
                 } else {
                     button.isEnabled =
-                        s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank()
+                        s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank() && email.text.isValidEmail()
                 }
             }
         })
@@ -148,7 +159,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 before: Int,
                 count: Int
             ) {
-                button.isEnabled = s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank()
+                button.isEnabled = s.isNotBlank() && email.text.isNotBlank() && password.text.isNotBlank() && email.text.isValidEmail()
             }
         })
 

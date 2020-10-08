@@ -64,4 +64,5 @@
     <string name="profile_updated">Profilen oppdatert!</string>
     <string name="password_donot_match">passordene er ikke like</string>
     <string name="password_changed">Password successfully changed</string>
+    <string name="invalid_email_format">Ugyldig epostadresse</string>
 </resources>
