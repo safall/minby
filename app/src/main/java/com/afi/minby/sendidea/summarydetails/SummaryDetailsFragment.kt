@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.model.IdeaTemplateImpl
 import com.afi.minby.sendidea.categories.model.CategoriesEnum
+import com.afi.minby.sendidea.categories.model.Category
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.summary_details_fragment.*
@@ -24,7 +25,7 @@ class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
         super.onViewCreated(view, savedInstanceState)
         description.text = template.ideaTemplate.description
         category.text = template.ideaTemplate.category.name
-        category.setBackgroundColor(template.ideaTemplate.category.color)
+        category.setBackgroundColor(template.ideaTemplate.category.getBackgroundColor())
         location.text = template.ideaTemplate.latlng.toString()
         userEmail.text = "abc@gmail.com"
 
@@ -34,6 +35,17 @@ class SummaryDetailsFragment : Fragment(R.layout.summary_details_fragment) {
         }
     }
 
+    private fun Category.getBackgroundColor(): Int {
+        return when (this.iconId) {
+            CategoriesEnum.NATURE -> color
+            CategoriesEnum.TECHNOLOGY -> color
+            CategoriesEnum.BUILDING -> color
+            CategoriesEnum.SOCIAL -> color
+            CategoriesEnum.ACTIVITIES -> color
+            CategoriesEnum.ORGANISATION ->color
+            CategoriesEnum.OTHER -> ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark)
+        }
+    }
 
     private fun CategoriesEnum.getDrawableForCategory(): Drawable? {
         return ContextCompat.getDrawable(
