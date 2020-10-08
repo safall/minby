@@ -13,9 +13,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_send_idea.*
 import kotlinx.android.synthetic.main.enter_location_fragment.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapReadyCallback {
@@ -46,7 +46,17 @@ class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapR
     override fun onMapReady(map: GoogleMap?) {
         googleMap = map ?: return
         with(googleMap) {
-            animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 13f))
+            animateCamera(CameraUpdateFactory.newLatLngZoom(template.ideaTemplate.latlng, 13f))
+            addMarker(MarkerOptions().apply {
+                position(currentLatLng)
+                title(
+                    template.ideaTemplate.latlng.latitude.toString() +
+                            " : "
+                            + template.ideaTemplate.latlng.longitude.toString()
+                )
+                currentLatLng = template.ideaTemplate.latlng
+                nextButton.isEnabled = true
+            })
             setOnMapClickListener {
                 clear()
                 animateCamera(CameraUpdateFactory.newLatLngZoom(it, 13f))
