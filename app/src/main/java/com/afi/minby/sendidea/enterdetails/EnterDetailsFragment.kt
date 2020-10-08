@@ -32,6 +32,7 @@ class EnterDetailsFragment : Fragment(R.layout.enter_details_fragment) {
             description.setText(template.ideaTemplate.description)
         }
         voiceIcon.setOnClickListener { speak() }
+        recordText.setOnClickListener { speak() }
         nextButton.setOnClickListener {
             val desc = description.text.toString()
             val updatedTempl = template.ideaTemplate.copy(description = desc)
