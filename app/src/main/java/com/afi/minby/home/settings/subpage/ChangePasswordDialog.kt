@@ -112,7 +112,7 @@ class ChangePasswordDialog : DialogFragment() {
                 before: Int,
                 count: Int
             ) {
-                button.isEnabled = s.isNotBlank() && newPassword.text.isNotBlank() && confirmPassword.text.isNotBlank()
+                save.isEnabled = s.isNotBlank() && newPassword.text.isNotBlank() && confirmPassword.text.isNotBlank()
             }
         })
 
