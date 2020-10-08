@@ -37,6 +37,6 @@
 
     <dialog
         android:id="@+id/privacyPolicyDialog"
-        android:name="com.afi.minby.settings.subpage.PrivacyPolicyDialog"
+        android:name="com.afi.minby.home.settings.subpage.PrivacyPolicyDialog"
         tools:layout="@layout/dialog_privacy" />
 </navigation>

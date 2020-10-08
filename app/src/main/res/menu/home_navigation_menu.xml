@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_mail"
         android:title="@string/home" />
     <item
-        android:id="@+id/enterLocationFragment"
+        android:id="@+id/mapFragment"
         android:icon="@drawable/ic_location"
         android:title="@string/map" />
     <item

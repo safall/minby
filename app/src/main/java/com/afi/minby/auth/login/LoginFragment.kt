@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
 import com.afi.minby.R
 import com.afi.minby.auth.ScreenState
-import com.afi.minby.settings.subpage.KEY_PRIVACY
+import com.afi.minby.home.settings.subpage.KEY_PRIVACY
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_launcher.*

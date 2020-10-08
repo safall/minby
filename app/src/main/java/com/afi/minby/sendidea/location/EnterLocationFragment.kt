@@ -35,7 +35,7 @@ class EnterLocationFragment : Fragment(R.layout.enter_location_fragment), OnMapR
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
         nextButton.setOnClickListener {
-            val updatedTempl  = template.ideaTemplate.copy(latlng = currentLatLng)
+            val updatedTempl = template.ideaTemplate.copy(latlng = currentLatLng)
             template.update(updatedTempl)
             NavHostFragment.findNavController(host_fragment)
                 .navigate(R.id.enterLocationFragmentToEnterDetailsFragment)

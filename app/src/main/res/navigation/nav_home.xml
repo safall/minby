@@ -21,13 +21,18 @@
         tools:layout="@layout/fragment_feed" />
 
     <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.afi.minby.home.map.MapUnifiedFragment"
+        tools:layout="@layout/fragment_map_unified" />
+
+    <fragment
         android:id="@+id/profileFragment"
         android:name="com.afi.minby.profile.ProfileFragment"
         tools:layout="@layout/profile_fragment" />
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.afi.minby.settings.SettingsFragment"
+        android:name="com.afi.minby.home.settings.SettingsFragment"
         tools:layout="@layout/fragment_settings" />
 
     <dialog
@@ -37,12 +42,12 @@
 
     <dialog
         android:id="@+id/changePasswordDialog"
-        android:name="com.afi.minby.settings.subpage.ChangePasswordDialog"
+        android:name="com.afi.minby.home.settings.subpage.ChangePasswordDialog"
         tools:layout="@layout/dialog_change_password" />
 
     <dialog
         android:id="@+id/privacyPolicyDialog"
-        android:name="com.afi.minby.settings.subpage.PrivacyPolicyDialog"
+        android:name="com.afi.minby.home.settings.subpage.PrivacyPolicyDialog"
         tools:layout="@layout/dialog_privacy" />
 
     <activity
