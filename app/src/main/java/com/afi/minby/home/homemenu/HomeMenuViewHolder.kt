@@ -19,8 +19,8 @@ class HomeMenuViewHolder(val view: View, private val itemCallback: AdapterCallba
     fun bind(items: HomeMenuItem) {
         data = items
         view.icon.setImageDrawable(ContextCompat.getDrawable(view.context, items.iconID))
-        view.title.text = items.title
-        view.subtitle.text = items.desc
+        view.title.text = view.context.getText(items.title)
+        view.subtitle.text = view.context.getText(items.desc)
         itemView.setOnClickListener(onItemSelected)
     }
 }

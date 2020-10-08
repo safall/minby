@@ -67,4 +67,8 @@
     <string name="invalid_email_format">Ugyldig epostadresse</string>
     <string name="back">tilbake</string>
     <string name="user_image">Brukerprofilbilde</string>
+    <string name="send_us_idea">Send oss en ide</string>
+    <string name="send_us_review">Send oss en vurdering</string>
+    <string name="send_us_report">Send oss ​​en rapport</string>
+    <string name="desc_home_menu">Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae</string>
 </resources>

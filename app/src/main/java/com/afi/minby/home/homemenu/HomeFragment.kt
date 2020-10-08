@@ -35,8 +35,9 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
                     it,
                     object : AdapterCallback {
                         override fun <T> onItemClicked(item: T) {
+                            val ideaType = (item as HomeMenuItem).title
                             val updatedTemplate =
-                                template.ideaTemplate.copy(ideaType = (item as HomeMenuItem).title)
+                                template.ideaTemplate.copy(ideaType = requireContext().getString(ideaType))
                             template.update(updatedTemplate)
                             NavHostFragment.findNavController(hostFragment)
                                 .navigate(R.id.sendIdeaActivity)

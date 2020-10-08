@@ -10,24 +10,24 @@ object LocalData {
                 add(
                     0,
                     HomeMenuItem(
-                        "Send oss en ide",
-                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
+                        R.string.send_us_idea,
+                        R.string.desc_home_menu,
                         R.drawable.ic_idea
                     )
                 )
                 add(
                     1,
                     HomeMenuItem(
-                        "Send oss en vurdering",
-                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
-                        R.drawable.ic_interview
+                        R.string.send_us_review,
+                        R.string.desc_home_menu,
+                        R.drawable.ic_review
                     )
                 )
                 add(
                     2,
                     HomeMenuItem(
-                        "Send oss en intervju",
-                        "Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae",
+                        R.string.send_us_report,
+                        R.string.desc_home_menu,
                         R.drawable.ic_interview
                     )
                 )

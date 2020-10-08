@@ -67,4 +67,8 @@
     <string name="invalid_email_format">Invalid Email address</string>
     <string name="back">back</string>
     <string name="user_image">User Profile Image</string>
+    <string name="send_us_idea">Send us an idea</string>
+    <string name="send_us_review">Send us a review</string>
+    <string name="send_us_report">Send us a report</string>
+    <string name="desc_home_menu">Lorem ipsum dolor sit amet consectetur adipiscing elit. praesent bibendum massa lectus, vitae</string>
 </resources>
