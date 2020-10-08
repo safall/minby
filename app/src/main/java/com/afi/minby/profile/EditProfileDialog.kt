@@ -33,15 +33,27 @@ class EditProfileDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backIcon.setOnClickListener { dismiss() }
+
+        save.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.profile_updated),
+                Toast.LENGTH_LONG
+            ).show()
+            dismiss()
+        }
         userAddress.setOnEditorActionListener { v, actionId, event ->
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.profile_updated),
-                        Toast.LENGTH_LONG
-                    ).show()
-                    dismiss()
+                    if (save.isEnabled) {
+                        Toast.makeText(
+                            requireContext(),
+                            getString(R.string.profile_updated),
+                            Toast.LENGTH_LONG
+                        ).show()
+                        dismiss()
+                    }
+
                     true
                 }
                 else -> false
@@ -51,7 +63,7 @@ class EditProfileDialog : DialogFragment() {
             override fun afterTextChanged(s: Editable?)  {
                 if (!email.text.isValidEmail()) {
                     email.error = getString(R.string.invalid_email_format)
-                    button.isEnabled = false
+                    save.isEnabled = false
                 } else {
                     email.error = null
                 }
@@ -66,7 +78,7 @@ class EditProfileDialog : DialogFragment() {
                 before: Int,
                 count: Int
             ) {
-                button.isEnabled = s.isNotBlank() && password.text.isNotBlank()
+                save.isEnabled = s.isNotBlank()
             }
         })
     }

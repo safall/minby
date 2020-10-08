@@ -11,6 +11,11 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.afi.minby.R
 import kotlinx.android.synthetic.main.dialog_change_password.*
+import kotlinx.android.synthetic.main.dialog_change_password.backIcon
+import kotlinx.android.synthetic.main.dialog_change_password.confirmPassword
+import kotlinx.android.synthetic.main.dialog_change_password.save
+import kotlinx.android.synthetic.main.dialog_edit_profile.*
+import kotlinx.android.synthetic.main.fragment_login.*
 
 class ChangePasswordDialog : DialogFragment() {
 
@@ -30,6 +35,15 @@ class ChangePasswordDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backIcon.setOnClickListener { dismiss() }
+        save.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.password_changed),
+                Toast.LENGTH_LONG
+            ).show()
+            dismiss()
+        }
+
         newPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) = run {
                 val newP = newPassword.text.toString()
@@ -89,12 +103,15 @@ class ChangePasswordDialog : DialogFragment() {
         confirmPassword.setOnEditorActionListener { v, actionId, event ->
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.password_changed),
-                        Toast.LENGTH_LONG
-                    ).show()
-                    dismiss()
+                    if (save.isEnabled) {
+                        Toast.makeText(
+                            requireContext(),
+                            getString(R.string.password_changed),
+                            Toast.LENGTH_LONG
+                        ).show()
+                        dismiss()
+                    }
+
                     true
                 }
                 else -> false

@@ -117,7 +117,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         password.setOnEditorActionListener { v, actionId, event ->
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
-                    viewModel.attemptLogin(email.text.toString(), password.text.toString())
+                    if (button.isEnabled) {
+                        viewModel.attemptLogin(email.text.toString(), password.text.toString())
+                    }
                     true
                 }
                 else -> false
@@ -127,7 +129,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         confirmPassword.setOnEditorActionListener { v, actionId, event ->
             when (actionId) {
                 EditorInfo.IME_ACTION_DONE -> {
-                    viewModel.attemptLogin(email.text.toString(), password.text.toString())
+                    if (button.isEnabled) {
+                        viewModel.attemptLogin(email.text.toString(), password.text.toString())
+                    }
                     true
                 }
                 else -> false
