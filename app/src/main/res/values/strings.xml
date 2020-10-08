@@ -65,4 +65,6 @@
     <string name="password_donot_match">Passwords do not match</string>
     <string name="password_changed">Password successfully changed</string>
     <string name="invalid_email_format">Invalid Email address</string>
+    <string name="back">back</string>
+    <string name="user_image">User Profile Image</string>
 </resources>

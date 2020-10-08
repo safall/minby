@@ -24,6 +24,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="44dp"
         android:src="@drawable/ic_profile"
+        android:contentDescription="@string/user_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarTitle" />
@@ -118,6 +119,7 @@
         android:src="@drawable/bg_circle_home"
         android:translationX="255dp"
         android:translationY="600dp"
+        android:importantForAccessibility="no"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         android:layout_height="400dp"
         android:layout_marginStart="81dp"
         android:src="@drawable/ic_reward"
+        android:importantForAccessibility="no"
         android:translationX="91dp"
         android:translationY="-141dp"
         app:layout_constraintStart_toStartOf="parent"
